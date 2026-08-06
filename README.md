@@ -12,33 +12,49 @@ Dự án thiết kế & phát triển website nhà hàng - quán cà phê dựa 
 ### 🔴 Bảng màu (Color Palette)
 
 #### 1. Màu thương hiệu (Brand Colors - Cà phê / Vàng kim)
-* `brand-100`: `#FFF7ED`
-* `brand-300`: `#FDE68A`
-* `brand-500`: `#D4AF37` *(Màu chủ đạo chính)*
-* `brand-600`: `#B49127`
-* `brand-700`: `#8C6D18`
+--color-brand-100: #F7EBD9;
+--color-brand-300: #E2C299;
+--color-brand-500: #BC9A6C;
+--color-brand-600: #9E7D51;
+--color-brand-700: #7A5E39;
 
 #### 2. Màu nhấn (Accent Colors - Điểm nhấn UI/Button)
-* `accent-100`: `#FEF3C7`
-* `accent-300`: `#FCD34D`
-* `accent-500`: `#F59E0B` *(Màu nhấn chính)*
-* `accent-600`: `#D97706`
-* `accent-700`: `#B45309`
+--color-accent-100: #FAF8F5;
+--color-accent-300: #F5F2EC;
+--color-accent-500: #EDEAE3;
+--color-accent-600: #D6D1C4;
+--color-accent-700: #B8B1A0;
 
 #### 3. Màu chữ (Ink) & Muted
-* `ink-100`: `#FAFAFA` | `ink-300`: `#D4D4D8` | `ink-500`: `#71717A` | `ink-700`: `#3F3F46` | `ink-900`: `#18181B`
-* `muted-300`: `#D4D4D8` | `muted-400`: `#A1A1AA` | `muted-500`: `#71717A` | `muted-600`: `#52525B`
+--color-ink-100: #FFFFFF;
+--color-ink-300: #E0E0E0;
+--color-ink-500: #4F4F4F;
+--color-ink-700: #1D1D1D;
+--color-ink-900: #0D0D0D;
+
+--color-muted-300: #E0E0E0;
+--color-muted-400: #828282;
+--color-muted-500: #4F4F4F;
+--color-muted-600: #333333;
 
 #### 4. Đường viền (Line) & Bề mặt (Surface)
-* `line-100`: `#F4F4F5` | `line-200`: `#E4E4E7` | `line-300`: `#D4D4D8` | `line-700`: `#3F3F46`
-* `surface-50`: `#FAFAFA` | `surface-100`: `#F4F4F5` | `surface-200`: `#E4E4E7` | `surface-900`: `#111111` | `surface-950`: `#0A0A0A`
+--color-line-100: #F2F2F2;
+--color-line-200: #E0E0E0;
+--color-line-300: #BDBDBD;
+--color-line-700: #4F4F4F;
 
----
+--color-surface-50: #FFFFFF;
+--color-surface-100: #F8F8F8;
+--color-surface-200: #E5E5E5;
+--color-surface-900: #1D1D1D;
+--color-surface-950: #0D0D0D;
+
+
 
 ### 🔤 2. Font chữ & Cỡ chữ (Typography)
 
-* **Font Tiêu đề (Display):** `"Playfair Display"`, serif, system-ui
-* **Font Văn bản (Body):** `"Inter"`, sans-serif, system-ui
+--font-display: "Miniver", "Great Vibes", cursive, sans-serif;
+--font-body: "Inter", "Helvetica", system-ui, sans-serif;
 
 #### Kích thước Heading
 * `h1`: `48px` (`text-[48px]`)
@@ -55,9 +71,9 @@ Dự án thiết kế & phát triển website nhà hàng - quán cà phê dựa 
 
 ### 📐 3. Bo góc (Border Radius) & Spacing
 
-* **Radius Card:** `0.875rem` (14px)
-* **Radius Pill (Button/Badge):** `0.5rem` (8px)
-* **Padding Dọc Section:** `96px` (`py-section` / `py-[96px]`)
+Bo góc (1rem = 16px):
+--radius-card: 0.5rem;
+--radius-pill: 0.375rem;
 
 #### Bảng Quy Đổi Tailwind CSS
 | Figma | Tailwind CSS Class |
