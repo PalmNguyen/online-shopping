@@ -19,11 +19,11 @@ Dự án thiết kế & phát triển website nhà hàng - quán cà phê dựa 
 --color-brand-700: #7A5E39;
 
 #### 2. Màu nhấn (Accent Colors - Điểm nhấn UI/Button)
---color-accent-100: #FAF8F5;
---color-accent-300: #F5F2EC;
---color-accent-500: #EDEAE3;
---color-accent-600: #D6D1C4;
---color-accent-700: #B8B1A0;
+--color-accent-100: #FDF3E7;
+--color-accent-300: #F4C286;
+--color-accent-500: #AF872F;
+--color-accent-600: #8C6A21;
+--color-accent-700: #684D14;
 
 #### 3. Màu chữ (Ink) & Muted
 --color-ink-100: #FFFFFF;
