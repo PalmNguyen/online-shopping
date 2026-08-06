@@ -1,0 +1,5 @@
+ # Tệp ẩn để bỏ qua các file rác không cần đẩy lên Git
+
+.DS_Store
+Thumbs.db
+node_modules/
