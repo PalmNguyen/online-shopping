@@ -1,1 +1,0 @@
-// File chứa JS xử lý giao diện 
