@@ -1,110 +1,58 @@
-# ☕ Elite Food Restaurant & Coffee - Website
+# Design System: Fashion Online Shopping Website
 
-Dự án thiết kế & phát triển website nhà hàng - quán cà phê dựa trên thiết kế Figma **Elite - Food Restaurant - Coffee**.
+Tài liệu hướng dẫn hệ thống màu sắc (Color Palette) và kiểu chữ (Typography) chuẩn dành cho giao diện website thời trang.
 
-* **Figma Template:** [Link Figma](https://www.figma.com/design/nqrruaorziUuHMjzz773DG/Elite---Food-Restaurant---Coffee-Free-Figma-Template--Community---Community-?node-id=308-10309)
-* **Công nghệ sử dụng:** HTML5, Tailwind CSS, JavaScript (ES6), Git/GitHub.
+## 1. Hệ Thống Màu Sắc (Color Palette)
 
----
-
-## 🎨 1. Design System (Quy chuẩn Thiết kế)
-
-### 🔴 Bảng màu (Color Palette)
-
-#### 1. Màu thương hiệu (Brand Colors - Cà phê / Vàng kim)
---color-brand-100: #F7EBD9;
---color-brand-300: #E2C299;
---color-brand-500: #BC9A6C;
---color-brand-600: #9E7D51;
---color-brand-700: #7A5E39;
-
-#### 2. Màu nhấn (Accent Colors - Điểm nhấn UI/Button)
---color-accent-100: #FDF3E7;
---color-accent-300: #F4C286;
---color-accent-500: #AF872F;
---color-accent-600: #8C6A21;
---color-accent-700: #684D14;
-
-#### 3. Màu chữ (Ink) & Muted
---color-ink-100: #FFFFFF;
---color-ink-300: #E0E0E0;
---color-ink-500: #4F4F4F;
---color-ink-700: #1D1D1D;
---color-ink-900: #0D0D0D;
-
---color-muted-300: #E0E0E0;
---color-muted-400: #828282;
---color-muted-500: #4F4F4F;
---color-muted-600: #333333;
-
-#### 4. Đường viền (Line) & Bề mặt (Surface)
---color-line-100: #F2F2F2;
---color-line-200: #E0E0E0;
---color-line-300: #BDBDBD;
---color-line-700: #4F4F4F;
-
---color-surface-50: #FFFFFF;
---color-surface-100: #F8F8F8;
---color-surface-200: #E5E5E5;
---color-surface-900: #1D1D1D;
---color-surface-950: #0D0D0D;
-
-
-
-### 🔤 2. Font chữ & Cỡ chữ (Typography)
-
---font-display: "Miniver", "Great Vibes", cursive, sans-serif;
---font-body: "Inter", "Helvetica", system-ui, sans-serif;
-
-#### Kích thước Heading
-* `h1`: `48px` (`text-[48px]`)
-* `h2`: `36px` (`text-[36px]`)
-* `h3`: `28px` (`text-[28px]`)
-
-#### Kích thước Body
-* `text-lg`: `20px`
-* `text-base`: `16px`
-* `text-sm`: `14px`
-* `text-xs`: `12px`
-
----
-
-### 📐 3. Bo góc (Border Radius) & Spacing
-
-Bo góc (1rem = 16px):
---radius-card: 0.5rem;
---radius-pill: 0.375rem;
-
-#### Bảng Quy Đổi Tailwind CSS
-| Figma | Tailwind CSS Class |
+### 1.1 Nền (Background Colors)
+| Vị trí / Thuộc tính | Mã Hex |
 | :--- | :--- |
-| `2px` | `rounded-sm` |
-| `4px` | `rounded` |
-| `6px` | `rounded-md` |
-| `8px` | `rounded-lg` *(Pill)* |
-| `12px` | `rounded-xl` |
-| `14px` | `rounded-card` *(0.875rem)* |
-| `16px` | `rounded-2xl` |
-| `24px` | `rounded-3xl` |
-| `999px` | `rounded-full` |
+| **Nền chính** (Background toàn trang) | `#FFFFFF` |
+| **Nền phụ:** Nút bấm (Sign up, See more, Buy now,...), Nền lựa chọn | `#000000` |
+| **Nền phụ:** Khối thời gian Sale | `#F8CCCC` |
+| **Nền phụ:** Khối thông tin Sale | `#da3f3f` |
+| **Nền phụ:** Khu vực logo nhà tài trợ | `#f8f8f8` |
+| **Nền phụ:** Khung mô tả thông tin sản phẩm | `#dadada` |
+| **Nền phụ:** Vùng chọn số lượng sản phẩm | `#f1f1f1` |
+| **Nền lựa chọn (khác)** | `#f3f3f3` |
+
+### 1.2 Màu Chữ (Text Colors)
+#### Chữ Chính
+| Vị trí / Thuộc tính | Mã Hex |
+| :--- | :--- |
+| **Tiêu đề** | `#484848` |
+| **Page Info** | `#8a8a8a` |
+| **Home page:** Tên sản phẩm, giá, số lượt bán, timer,... | `#484848` |
+| **Shop page:** Tên sản phẩm, giá,... | `#000000` |
+| **Filters:** Heading | `#000000` |
+| **Filters:** Options | `#8a8a8a` |
+| **Filters:** Option trong mục tags | `#777777` |
+| **Product page:** Thời gian sale | `#ff706b` |
+| **Product page:** Số lượng sản phẩm | `#666666` |
+
+#### Chữ Phụ
+| Vị trí / Thuộc tính | Mã Hex |
+| :--- | :--- |
+| **Trong nút background đen** | `#FFFFFF` |
+| **Gợi ý điền form (Home page):** Email, tên,... | `#8a8a8a` |
+| **Gợi ý điền form (Sign in page):** Email, tên,... | `#9d9d9d` |
+| **Description (Mô tả sản phẩm)** | `#767676` |
+| **Giá, tên, free ship** | `#000000` |
+| **Đánh giá khách hàng:** Comment, tên, vai trò,... | `#484848` |
+| **Liên kết (Links):** Login, resent now,... | `#5B86E5` |
+| **Trạng thái sản phẩm (còn/hết hàng)** | `#ff4646` |
 
 ---
 
-## 👥 4. Phân công Công việc (Task Division)
+## 2. Quy Định Kiểu Chữ (Typography)
 
-| Thành viên | Trang phụ trách | Tính năng JS phụ trách |
-| :--- | :--- | :--- |
-| **Thành viên A** | Trang chủ (Home), Về chúng tôi (About) | Responsive Navigation Menu (Mobile Menu), Banner Slider |
-| **Thành viên B** | Thực đơn (Menu), Chi tiết món | Bộ lọc danh mục (Cà phê/Trà/Bánh), Slider ảnh không gian |
-| **Thành viên C** | Đặt bàn (Reservation), Liên hệ, Tin tức | Validate Form Đặt bàn & Form Liên hệ |
+### 2.1 Font Ink
+| Font Family | Ứng dụng |
+| :--- | :--- |
+| **Poppins** | Navigation, footer, thông tin trang, button (sign in, buy now,...), text chung, timer,... |
+| **Volkhov** | Tiêu đề lớn (Heading), tên khách hàng đánh giá, minicart (price, viewcart, subtotal), free ship,... |
 
----
-
-## 🛠️ 5. Quy trình Git & Workflow
-
-1. **Không push trực tiếp vào `main`.**
-2. Trước khi làm task mới, luôn lấy code mới nhất từ `main`:
-   ```bash
-   git checkout main
-   git pull origin main
-   git checkout -b feature/ten-tinh-nang
+### 2.2 Font Muted
+| Font Family | Ứng dụng |
+| :--- | :--- |
+| **Jost** | Thời gian vận chuyển, sale, prod_form-buttons,... |
