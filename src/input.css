@@ -1,72 +1,37 @@
+/* 1. Tải Font từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@400;700&display=swap');
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *)); /* Dùng cho Dark mode nếu có */
+/* 2. Nạp tệp font local (Sửa lại đường dẫn nếu bạn để file ở chỗ khác) */
+@font-face {
+  font-family: 'Digital Numbers';
+  src: url('./assets/fonts/DigitalNumbers.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
 
+/* 3. Khai báo Màu & Font cho Tailwind v4 */
 @theme {
-  /* =========================================
-     1. MÀU THƯƠNG HIỆU (BRAND - PRIMARY COFFEE) 
-     Dùng cho logo, banner, các dải màu chính
-     ========================================= */
-  --color-brand-100: #F7EBD9;
-  --color-brand-300: #E2C299;
-  --color-brand-500: #BC9A6C; /* Màu chủ đạo chính */
-  --color-brand-600: #9E7D51; /* Màu khi hover */
-  --color-brand-700: #7A5E39;
+  /* Màu chủ đạo FASCO */
+  --color-primary: #222222;
+  --color-secondary: #F8F8F8;
+  --color-sale: #FF4D4D;
+  --color-star: #FFB800;
 
-  /* =========================================
-     2. MÀU NHẤN (ACCENT - SECONDARY) 
-     Dùng cho Nút bấm (Button), Icon, Badge nổi bật
-     ========================================= */
-  --color-accent-100: #FDF3E7;
-  --color-accent-300: #F4C286;
-  --color-accent-500: #AF872F; /* Màu vàng đất chính */
-  --color-accent-600: #8C6A21; /* Màu khi hover nút */
-  --color-accent-700: #684D14;
+  --color-main: #222222;
+  --color-muted: #767676;
+  --color-border: #E5E5E5;
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-light-silver: #E0E0E0;
+  --color-dark-brown: #484848;
+  --color-medium-gray: #8A8A8A;
 
-  /* =========================================
-     3. MÀU CHỮ CHÍNH (INK) 
-     Dùng cho Tiêu đề (Heading), Giá tiền, Text quan trọng
-     ========================================= */
-  --color-ink-100: #FFFFFF; /* Dùng cho chữ trên nền tối/nút bấm */
-  --color-ink-300: #E0E0E0;
-  --color-ink-500: #4F4F4F;
-  --color-ink-700: #1D1D1D; /* Tiêu đề phụ */
-  --color-ink-900: #0D0D0D; /* Tiêu đề chính đậm nhất */
+  /* Font chữ & Bo góc */
+  --font-volkhov: "Volkhov", serif;
+  --font-jost: "Jost", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-digital-number: "Digital Numbers", sans-serif;
 
-  /* =========================================
-     4. MÀU CHỮ PHỤ (MUTED) 
-     Dùng cho Mô tả (Description), Ngày tháng, Text mờ
-     ========================================= */
-  --color-muted-300: #E0E0E0;
-  --color-muted-400: #828282; /* Placeholder input, text cực mờ */
-  --color-muted-500: #4F4F4F; /* Chữ đoạn văn (Paragraph) */
-  --color-muted-600: #333333;
-
-  /* =========================================
-     5. MÀU VIỀN (LINE / BORDER) 
-     Dùng cho viền Card, Input form, Đường kẻ ngang (Divider)
-     ========================================= */
-  --color-line-100: #F2F2F2; /* Đường kẻ rất mờ */
-  --color-line-200: #E0E0E0; /* Viền thẻ, viền input mặc định */
-  --color-line-300: #BDBDBD; /* Viền input khi focus nhẹ */
-  --color-line-700: #4F4F4F;
-
-  /* =========================================
-     6. MÀU NỀN (SURFACE / BACKGROUND) 
-     Dùng cho nền trang, nền thẻ (Card), nền Footer
-     ========================================= */
-  --color-surface-50:  #FFFFFF; /* Nền thẻ (Card), nền Dropdown trắng */
-  --color-surface-100: #EDEAE3; /* Nền kem nhạt đặc trưng của quán Coffee */
-  --color-surface-200: #E5E5E5; /* Nền xám nhạt */
-  --color-surface-900: #1D1D1D; /* Nền Footer hoặc nền Section tối */
-  --color-surface-950: #0D0D0D;
-
-  /* =========================================
-     7. TYPOGRAPHY & RADIUS (Phông chữ & Bo góc)
-     ========================================= */
-  --font-display: "Great Vibes", "Miniver", cursive, sans-serif;
-  --font-body:    "Inter", "Helvetica", system-ui, sans-serif;
-
-  --radius-card: 0.5rem;   /* 8px - Bo góc cho thẻ sản phẩm, ảnh */
-  --radius-pill: 0.375rem; /* 6px - Bo góc cho nút bấm nhỏ, input */
+  --radius-main: 8px;
 }

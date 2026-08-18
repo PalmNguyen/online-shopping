@@ -1,2 +1,207 @@
-<!-- Trang chủ //sadasdsadasdasd-->
- 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website-coffee-shop</title>
+    <link rel="stylesheet" href="src/input.css" />
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+
+    <!-- Navbar thanh menu do a -->
+    <header class="max-w-7xl mx-auto mt-17 mb-23.5">
+      <nav class="flex justify-between items-center">
+        <a href="#">
+          <img src="src/assets/img/FASCO.svg" alt="" />
+        </a>
+        <ul class="flex gap-15 items-center">
+          <li>
+            <a href="#" class="font-poppins font-normal">Home</a>
+          </li>
+          <li>
+            <a href="#" class="font-poppins font-normal">Details</a>
+          </li>
+          <li>
+            <a href="#" class="font-poppins font-normal">New Arrivals</a>
+          </li>
+          <li>
+            <a href="#" class="font-poppins font-normal">Packages</a>
+          </li>
+          <li>
+            <button class="font-poppins font-normal">Sign in</button>
+          </li>
+          <li>
+            <button class="bg-black text-white px-11 py-5 rounded-2xl">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- o duoi thanh menu nhung buc anh -->
+    <div class="max-w-7xl grid grid-flow-col auto-cols-max mx-auto mb-7 gap-9">
+      <img
+        class="bg-light-silver pt-46 rounded-xl"
+        src="src/assets/img/onggiachongcam.png"
+        alt=""
+      />
+      <div class="flex flex-col justify-between">
+        <img
+          class="bg-light-silver px-4 pt-1 rounded-xl"
+          src="src/assets/img/4girls.png"
+          alt=""
+        />
+        <div class="flex flex-col items-center">
+          <img src="src/assets/img/ultimate.svg" alt="" />
+          <img src="src/assets/img/sale.svg" alt="" />
+          <p class="font-poppins font-normal text-xl text-dark-brown">
+            NEW COLLECTION
+          </p>
+          <button class="bg-black text-white px-15 py-5 rounded-2xl mt-5">
+            SHOP NOW
+          </button>
+        </div>
+        <img src="src/assets/img/image.png" alt="" />
+      </div>
+      <img
+        class="bg-light-silver pt-47 pl-16 pr-20 rounded-xl max-h-189 max-w-98"
+        src="src/assets/img/danongtocxu.png"
+        alt=""
+      />
+    </div>
+
+    <!-- 2 cai icon phia duoi ben phai shop -->
+    <div class="fixed flex gap-9 bottom-7 right-10">
+      <img
+        class="bg-black py-5 pl-4 pr-5 rounded-xl"
+        src="src/assets/img/iconshop.svg"
+        alt=""
+      />
+      <img
+        class="py-4 px-5 rounded-full border border-black"
+        src="src/assets/img/Vectorarrow.svg"
+        alt=""
+      />
+    </div>
+
+    <!-- LOGO cua cac hang -->
+    <section
+      class="w-full pt-8 pb-8 mt-4 mb-10 sm:pt-12 sm:pb-12 sm:mb-[60px] lg:pt-[82px] lg:pb-[82px] lg:mt-7 lg:mb-[100px]"
+    >
+      <div
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 lg:gap-0 max-w-7xl mx-auto items-center justify-items-center px-4"
+      >
+        <img
+          src="src/assets/img/logoChanel.svg"
+          alt="Chanel"
+          class="h-6 sm:h-7 lg:h-auto object-contain"
+        />
+        <img
+          src="src/assets/img/logoLouisVuiton.svg"
+          alt="Louis Vuitton"
+          class="h-6 sm:h-7 lg:h-auto object-contain"
+        />
+        <img
+          src="src/assets/img/logoPRADA.svg"
+          alt="Prada"
+          class="h-6 sm:h-7 lg:h-auto object-contain"
+        />
+        <img
+          src="src/assets/img/logoCalvinKlein.svg"
+          alt="Calvin Klein"
+          class="h-6 sm:h-7 lg:h-auto object-contain"
+        />
+        <img
+          src="src/assets/img/logoDENIM.svg"
+          alt="Denim"
+          class="h-6 sm:h-7 lg:h-auto object-contain"
+        />
+      </div>
+    </section>
+    <!-- Section chứa toàn bộ -->
+    <section class="w-full">
+      <!-- Thẻ bọc 2 cột (Dùng max-w-7xl w-full thay vì w-7xl) -->
+      <div
+        class="max-w-7xl w-full mx-auto flex flex-row gap-10 justify-between"
+      >
+        <!-- CỘT BÊN TRÁI -->
+        <div class="max-w-[444px] flex flex-col gap-10">
+          <!-- PHẦN DEAL OF THE MONTH (Thêm items-start để nút không bị dãn) -->
+          <div class="flex flex-col items-start gap-5">
+            <h2 class="font-volkhov font-normal text-[46px] leading-none">
+              Deals Of The Month
+            </h2>
+            <p class="font-poppins font-normal leading-[26px] text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Scelerisque duis ultrices sollicitudin aliquam sem. Scelerisque
+              duis ultrices sollicitudin
+            </p>
+            <!-- Nút bấm đã thu nhỏ vừa vặn (w-[207px] h-[56px]) -->
+            <button
+              class="bg-black font-poppins w-[207px] h-[56px] flex items-center justify-center text-white rounded-xl hover:bg-gray-800 transition"
+            >
+              Buy Now
+            </button>
+          </div>
+
+          <!-- PHẦN HUNRY BEFORE IT TOO LATE -->
+          <div class="flex flex-col gap-4">
+            <h3
+              class="font-poppins font-medium text-xl leading-none text-dark-brown"
+            >
+              Hurry, Before It's Too Late!
+            </h3>
+
+            <!-- Dải 4 đồng hồ -->
+<ul class="flex gap-4">
+  
+  <!-- 1. Cụm Days -->
+  <li class="flex flex-col items-center gap-2">
+    <!-- Cục ô vuông VIỀN CHỈ BỌC CON SỐ (Kích thước 76x76px theo Figma) -->
+    <div class="w-[76px] h-[76px] border border-gray-200 rounded-xl flex items-center justify-center bg-white">
+      <span class="font-digital-number text-[32px] leading-none text-dark-brown">02</span>
+    </div>
+    <!-- Chữ nằm NGOÀI ô vuông viền -->
+    <span class="font-poppins text-base text-dark-brown">Days</span>
+  </li>
+
+  <!-- 2. Cụm Hr -->
+  <li class="flex flex-col items-center gap-2">
+    <div class="w-[76px] h-[76px] border border-gray-200 rounded-xl flex items-center justify-center bg-white">
+      <span class="font-digital-number text-[32px] leading-none text-dark-brown">06</span>
+    </div>
+    <span class="font-poppins text-base text-dark-brown">Hr</span>
+  </li>
+
+  <!-- 3. Cụm Mins -->
+  <li class="flex flex-col items-center gap-2">
+    <div class="w-[76px] h-[76px] border border-gray-200 rounded-xl flex items-center justify-center bg-white">
+      <span class="font-digital-number text-[32px] leading-none text-dark-brown">05</span>
+    </div>
+    <span class="font-poppins text-base text-dark-brown">Mins</span>
+  </li>
+
+  <!-- 4. Cụm Sec -->
+  <li class="flex flex-col items-center gap-2">
+    <div class="w-[76px] h-[76px] border border-gray-200 rounded-xl flex items-center justify-center bg-white">
+      <span class="font-digital-number text-[32px] leading-none text-dark-brown">30</span>
+    </div>
+    <span class="font-poppins text-base text-dark-brown">Sec</span>
+  </li>
+
+</ul>
+        </div>
+
+        <!-- CỘT PHẢI CHỨA Ảnh -->
+        <div class="flex-1">
+          <!-- Đưa các ảnh vào đây -->
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
