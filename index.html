@@ -2,35 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>website-coffee-shop</title>
     <link rel="stylesheet" href="/src/input.css" />
   </head>
 
   <body>
-    <div id="app"></div>
-
-    <!-- KHUNG CHỨA HTML TỪ CÁC FILE LẺ -->
-    <div id="header-container"></div>
+    <div id="header-home-container"></div>
     <div id="homepage-container"></div>
 
     <script type="module" src="/src/main.js"></script>
 
-    <!-- Script tự động nhúng HTML -->
-    <script>
-      function loadComponent(id, filePath) {
+    <script type="module">
+      import { initHeader } from '/src/js/header-home.js';
+
+      function loadComponent(id, filePath, callback) {
         fetch(filePath)
-          .then(res => res.text())
+          .then(res => {
+            if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
+            return res.text();
+          })
           .then(data => {
             document.getElementById(id).innerHTML = data;
+            if (callback) callback(); // Chạy JS riêng khi load xong component
           })
-          .catch(err => console.error(`Lỗi load file ${filePath}:`, err));
+          .catch(err => console.error(err));
       }
 
-      // Kéo 2 file con từ thư mục components ở ngoài gốc
-      loadComponent('header-container', '/components/header.html');
-      loadComponent('homepage-container', '/components/homepage.html');
+      // Gọi Header và kích hoạt file header.js
+      loadComponent('header-home-container', './components/header-home.html', initHeader);
+      loadComponent('homepage-container', './components/homepage.html');
     </script>
   </body>
 </html>
