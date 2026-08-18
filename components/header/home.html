@@ -1,0 +1,41 @@
+<header class="max-w-7xl mx-auto mt-5 mb-10 lg:mt-17 lg:mb-23.5 px-4 xl:px-0 relative">
+  <nav class="flex justify-between items-center">
+    <!-- Logo -->
+    <a href="#">
+      <img src="/src/assets/img/FASCO.svg" alt="Fasco" class="h-8 lg:h-auto" />
+    </a>
+
+    <!-- Menu trên Máy tính -->
+    <ul class="hidden lg:flex gap-15 items-center">
+      <li><a href="#" class="font-poppins font-normal hover:text-gray-600 transition">Home</a></li>
+      <li><a href="#" class="font-poppins font-normal hover:text-gray-600 transition">Details</a></li>
+      <li><a href="#" class="font-poppins font-normal hover:text-gray-600 transition">New Arrivals</a></li>
+      <li><a href="#" class="font-poppins font-normal hover:text-gray-600 transition">Packages</a></li>
+      
+      <!-- Thêm cursor-pointer vào Sign in & Sign Up -->
+      <li><button class="font-poppins font-normal cursor-pointer hover:text-gray-600 transition">Sign in</button></li>
+      <li>
+        <button class="bg-black text-white dark:bg-white dark:text-black px-11 py-5 rounded-2xl cursor-pointer hover:bg-gray-800 dark:hover:bg-gray-200 transition">
+        Sign Up
+      </button>
+      </li>
+    </ul>
+
+    <!-- Nút Hamburger trên Điện thoại -->
+    <button id="mobile-menu-btn" class="block lg:hidden text-3xl focus:outline-none z-50 cursor-pointer">
+      <span id="menu-icon">☰</span>
+    </button>
+  </nav>
+
+  <!-- Menu thả xuống trên Điện thoại -->
+  <div id="mobile-menu" class="hidden absolute top-16 left-0 w-full bg-white shadow-lg rounded-xl p-5 z-40 flex-col gap-4 text-center border border-gray-100 lg:hidden">
+    <a href="#" class="font-poppins font-normal block py-2 border-b border-gray-100">Home</a>
+    <a href="#" class="font-poppins font-normal block py-2 border-b border-gray-100">Details</a>
+    <a href="#" class="font-poppins font-normal block py-2 border-b border-gray-100">New Arrivals</a>
+    <a href="#" class="font-poppins font-normal block py-2 border-b border-gray-100">Packages</a>
+    
+    <!-- Thêm cursor-pointer cho Mobile -->
+    <button class="font-poppins font-normal block py-2 w-full text-center cursor-pointer">Sign in</button>
+    <button class="bg-black text-white px-11 py-3 rounded-2xl w-full cursor-pointer hover:bg-gray-800 transition">Sign Up</button>
+  </div>
+</header>

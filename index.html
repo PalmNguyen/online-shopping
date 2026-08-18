@@ -1,37 +1,41 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website-coffee-shop</title>
+    <title>online-shopping</title>
     <link rel="stylesheet" href="/src/input.css" />
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="header-home-container"></div>
     <div id="homepage-container"></div>
 
-    <script type="module" src="/src/main.js"></script>
+    <!-- Đường dẫn js chính -->
+    <script type="module" src="/src/js/header-home.js"></script>
 
     <script type="module">
-      import { initHeader } from '/src/js/header-home.js';
+        import { initHeader } from '/src/js/header-home.js';
 
-      function loadComponent(id, filePath, callback) {
-        fetch(filePath)
-          .then(res => {
-            if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
-            return res.text();
-          })
-          .then(data => {
-            document.getElementById(id).innerHTML = data;
-            if (callback) callback(); // Chạy JS riêng khi load xong component
-          })
-          .catch(err => console.error(err));
-      }
+        function loadComponent(id, filePath, callback) {
+            fetch(filePath)
+                .then(res => {
+                    if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
+                    return res.text();
+                })
+                .then(data => {
+                    document.getElementById(id).innerHTML = data;
+                    if (callback) callback(); // Chạy JS riêng khi load xong component
+                })
+                .catch(err => console.error(err));
+        }
 
-      // Gọi Header và kích hoạt file header.js
-      loadComponent('header-home-container', './components/header-home.html', initHeader);
-      loadComponent('homepage-container', './components/homepage.html');
+        // 1. Nạp file home.html vào header
+        loadComponent('header-home-container', '/components/header/home.html', initHeader);
+
+        // 2. Nạp file homepage.html vào body (không có callback vì chưa thấy import JS riêng cho homepage)
+        loadComponent('homepage-container', '/components/homepage.html'); 
+        
     </script>
-  </body>
+</body>
 </html>
