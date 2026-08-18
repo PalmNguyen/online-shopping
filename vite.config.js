@@ -9,7 +9,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: './homepage.html', // Thay tên file của bạn vào đây
+        main: './index.html', // Thay tên file của bạn vào đây
       },
     },
   },
