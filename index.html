@@ -3,19 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>website-coffee-shop</title>
-    <link rel="stylesheet" href="/src/input.css" />
+    <title>Online Shopping</title>
+    <link rel="stylesheet" href="/src/style.css" />
   </head>
 
   <body>
     <div id="header-home-container"></div>
     <div id="homepage-container"></div>
 
-    <script type="module" src="/src/main.js"></script>
-
     <script type="module">
-      import { initHeader } from '/src/js/header-home.js';
-
       function loadComponent(id, filePath, callback) {
         fetch(filePath)
           .then(res => {
@@ -30,8 +26,8 @@
       }
 
       // Gọi Header và kích hoạt file header.js
-      loadComponent('header-home-container', './components/header-home.html', initHeader);
-      loadComponent('homepage-container', './components/homepage.html');
+      loadComponent('header-home-container', '/src/components/header/home.html');
+      loadComponent('homepage-container', '/src/components/homepage.html');
     </script>
   </body>
 </html>
