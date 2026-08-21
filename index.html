@@ -8,26 +8,82 @@
   </head>
 
   <body>
-    <div id="header-home-container"></div>
-    <div id="homepage-container"></div>
+    <!-- BƯỚC 1: CÁC KHUNG CHỨA (CONTAINER) -->
+    <!-- Đây là các vùng trống để JavaScript bơm nội dung vào -->
+    <div id="header-container"></div>
+    <div id="main-container"></div>
+    <!-- 💡 NẾU CÓ FOOTER CHUNG: Bạn thêm 1 thẻ <div id="footer-container"></div> vào đây -->
 
     <script type="module">
-      function loadComponent(id, filePath, callback) {
+      // Hàm fetch đọc file HTML và nhét vào div
+      function loadComponent(id, filePath) {
         fetch(filePath)
           .then(res => {
             if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
             return res.text();
           })
-          .then(data => {
-            document.getElementById(id).innerHTML = data;
-            if (callback) callback(); // Chạy JS riêng khi load xong component
-          })
+          .then(data => document.getElementById(id).innerHTML = data)
           .catch(err => console.error(err));
       }
+      
+      // BƯỚC 2: DANH SÁCH ĐƯỜNG DẪN TRANG (ROUTES)
+      // 💡 THÊM TRANG MỚI Ở ĐÂY: 
+      // Nếu có trang mới (VD: about.html), bạn thêm 1 dòng: 'about': '/src/components/about.html',
+      const routes = {
+        'home': '/src/components/homepage.html',
+        'shop': '/src/components/shoppage.html',
+        'product': '/src/components/productpage.html',
+        'minicart': '/src/components/minicart.html',
+        'cart': '/src/components/cartpage.html',
+        'checkout': '/src/components/checkout.html',
 
-      // Gọi Header và kích hoạt file header.js
-      loadComponent('header-home-container', '/src/components/header/home.html');
-      loadComponent('homepage-container', '/src/components/homepage.html');
+        // Nhóm Account
+        'sign-in': '/src/components/account/sign-in.html',
+        'forget-password': '/src/components/account/forget-password.html',
+        'confirmation': '/src/components/account/confirmation.html',
+        'new-password': '/src/components/account/new-password.html',
+        'sign-up': '/src/components/account/sign-up.html',
+      };
+
+      // BƯỚC 3: HÀM XỬ LÝ LOGIC CHUYỂN TRANG
+      function renderPage() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const page = urlParams.get('page') || 'home';
+        
+        // Nếu nhập sai tên trang trên URL (VD: ?page=abcxyz), mặc định đưa về trang home
+        const filePath = routes[page] || routes['home'];
+
+        // --- XỬ LÝ LOGIC CHỌN HEADER TÙY THEO TRANG ---
+        // 💡 THÊM ĐIỀU KIỆN HEADER Ở ĐÂY:
+        if (page === 'home') {
+            // 1. Nếu là trang chủ -> Load header hoành tráng của trang chủ
+            loadComponent('header-container', '/src/components/header/home.html');
+            
+        } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'new-password') {
+            // 2. Nếu là các trang đăng nhập, đăng ký -> Thường sẽ ẩn Header hoặc dùng Header rất tối giản
+            // - Nếu muốn ẨN hoàn toàn Header: bỏ comment dòng dưới
+            document.getElementById('header-container').innerHTML = ''; 
+            
+            // - Nếu vẫn muốn hiện header default:
+            //loadComponent('header-container', '/src/components/header/default.html');
+            
+        } else {
+            // 3. Nếu là các trang còn lại (Shop, Cart, Product...) -> Load header dùng chung
+            loadComponent('header-container', '/src/components/header/sub.html'); 
+        }
+
+        // --- LOAD NỘI DUNG CHÍNH (MAIN) ---
+        loadComponent('main-container', filePath);
+        
+        // 💡 THÊM FOOTER Ở ĐÂY (nếu bước 1 bạn có tạo div footer-container):
+        // loadComponent('footer-container', '/src/components/footer.html');
+      }
+
+      // BƯỚC 4: CHẠY HÀM KHI NGƯỜI DÙNG TRUY CẬP
+      renderPage();
+
+      // Lắng nghe sự kiện để tự cập nhật trang khi người dùng bấm nút Back/Forward trên trình duyệt
+      window.addEventListener('popstate', renderPage);
     </script>
   </body>
 </html>
