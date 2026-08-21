@@ -1,32 +1,82 @@
-<!-- Navbar thanh menu do a -->
-<header class="max-w-7xl mx-auto mt-17 mb-23.5">
-  <nav class="flex justify-between items-center">
-    <a href="#">
-      <img src="src/assets/img/FASCO.svg" alt="" />
+<!-- HEADER / NAVBAR (ĐÃ FIX RESPONSIVE, SEO & TAILWIND CLASS) -->
+<header class="max-w-7xl mx-auto mt-6 md:mt-[68px] mb-8 md:mb-[94px] px-4">
+  <nav class="flex justify-between items-center" aria-label="Main Navigation">
+    <!-- LOGO FASCO -->
+    <a href="#" class="flex-shrink-0" aria-label="FASCO Homepage">
+      <img
+        src="src/assets/img/FASCO.svg"
+        alt="FASCO Official Logo"
+        class="h-8 w-auto"
+      />
     </a>
-    <ul class="flex gap-15 items-center">
+
+    <!-- MENU DESKTOP (ẨN TRÊN MOBILE, HIỆN TRÊN MÀN HÌNH MÁY TÍNH) -->
+    <ul class="hidden lg:flex items-center gap-8 xl:gap-[60px]">
       <li>
-        <a href="#" class="font-poppins font-normal">Home</a>
+        <a
+          href="#"
+          class="font-poppins font-normal text-black hover:opacity-70 transition-opacity"
+          >Home</a
+        >
       </li>
       <li>
-        <a href="#" class="font-poppins font-normal">Details</a>
+        <a
+          href="#"
+          class="font-poppins font-normal text-black hover:opacity-70 transition-opacity"
+          >Details</a
+        >
       </li>
       <li>
-        <a href="#" class="font-poppins font-normal">New Arrivals</a>
+        <a
+          href="#"
+          class="font-poppins font-normal text-black hover:opacity-70 transition-opacity"
+          >New Arrivals</a
+        >
       </li>
       <li>
-        <a href="#" class="font-poppins font-normal">Packages</a>
+        <a
+          href="#"
+          class="font-poppins font-normal text-black hover:opacity-70 transition-opacity"
+          >Packages</a
+        >
       </li>
       <li>
-        <button class="font-poppins font-normal">Sign in</button>
+        <a
+          href="/signin"
+          class="font-poppins font-normal text-black hover:opacity-70 transition-opacity"
+        >
+          Sign In
+        </a>
       </li>
       <li>
-        <button
-          class="bg-black text-white px-11 py-5 rounded-[10px] shadow-[0_20px_35px_rgba(0,0,0,0.15)] cursor-pointer transition-all duration-300 hover:-translate-y-1 active:scale-95"
+        <a
+          href="/signup"
+          class="bg-black hover:bg-neutral-800 font-poppins w-[152px] h-[56px] flex items-center justify-center text-white rounded-[10px] shadow-[0_20px_35px_rgba(0,0,0,0.15)] transition-all duration-200 active:scale-95"
         >
           Sign Up
-        </button>
+        </a>
       </li>
     </ul>
+
+    <!-- NÚT HAMBURGER MENU (DÙNG CHO GIAO DIỆN MOBILE & TABLET) -->
+    <button
+      aria-label="Toggle Navigation Menu"
+      class="lg:hidden p-2 text-black cursor-pointer focus:outline-none"
+    >
+      <svg
+        class="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
   </nav>
 </header>
