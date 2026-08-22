@@ -1,0 +1,166 @@
+<div class="max-w-7xl mx-auto bg-white px-4 py-10 font-nomal">
+
+    <!-- Tiêu đề trang -->
+    <div class="text-center py-8 border-b border-black mb-20 mt-11">
+        <h2 class="text-4xl text-black font-Volkhov">FASCO Demo Checkout</h2>
+    </div>
+
+    <!-- Bố cục chính chia 2 cột -->
+    <div class="flex flex-col md:flex-row">
+
+        <!-- Cột trái: Form điền thông tin -->
+        <div class="w-full md:w-1/2 p-8 md:pr-16 md:py-12">
+
+            <!-- Section: Contact -->
+            <div class="mb-15">
+                <div class="flex justify-between items-baseline mb-8">
+                    <h3 class="text-4xl text-[#484848] font-Volkhov">Contact</h3>
+                    <p class="text-base text-[#484848]">Have an account? <a href="#"
+                            class="text-blue-500 hover:underline">Create Account</a></p>
+                </div>
+                <input type="email" placeholder="Email Address"
+                    class="w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 placeholder:text-[#8a8a8a]">
+            </div>
+
+            <!-- Section: Delivery -->
+            <div class="my-15">
+                <h3 class="text-4xl text-[#484848] font-Volkhov mb-6">Delivery</h3>
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="col-span-2 relative">
+                        <select
+                            class="w-full border border-[#8a8a8a] p-3 text-base text-[#8a8a8a] appearance-none bg-white focus:outline-none focus:border-blue-500">
+                            <option>Country / Region</option>
+                        </select>
+                        <div
+                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-[#484848]">
+                            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Ô First Name đang được focus (viền xanh) như trong hình -->
+                    <input type="text" placeholder="First Name"
+                        class="col-span-1 w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]">
+
+                    <input type="text" placeholder="Last Name"
+                        class="col-span-1 w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]">
+                    <input type="text" placeholder="Address"
+                        class="col-span-2 w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]">
+                    <input type="text" placeholder="City"
+                        class="col-span-1 w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]">
+                    <input type="text" placeholder="Postal Code"
+                        class="col-span-1 w-full border border-[#8a8a8a] p-3 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]">
+                </div>
+                <div class="mt-5 flex items-center">
+                    <input type="checkbox" id="saveDelivery"
+                        class="w-5 h-5 border-[#8a8a8a] rounded text-black focus:ring-black">
+                    <label for="saveDelivery" class="ml-1 text-base text-[#8a8a8a]">Save This Info For Future</label>
+                </div>
+            </div>
+
+            <!-- Section: Payment -->
+            <div class="mb-7">
+                <h3 class="text-4xl text-[#484848] font-Volkhov mb-4">Payment</h3>
+
+                <div class="border border-[#8a8a8a] rounded-md bg-[#f5f5f5] overflow-hidden mb-5">
+                    <!-- Header của Payment -->
+                    <div class="flex justify-between items-center p-4 border-b border-gray-200 bg-white">
+                        <span class="text-base font-poppins text-[#484848]">Credit Card</span>
+                        <div class="flex items-center space-x-2">
+                            <!-- Icon Mastercard -->
+                            <img src="/src/assets/img/cucdovang.png" alt="">
+                            <svg class="fill-current h-4 w-4 text-[#484848]" xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 20 20">
+                                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <!-- Inputs của Payment -->
+                    <div class="p-4 grid grid-cols-2 gap-x-5">
+                        <div class="col-span-2 relative mt-5 mb-2">
+                            <input type="text" placeholder="Card Number"
+                                class="w-full border border-[#8a8a8a] p-3 rounded-md text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a] bg-white">
+                            <div class="absolute inset-y-0 right-3 flex items-center pointer-events-none">
+                                <svg class="h-4 w-4 text-[#484848]" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <input type="text" placeholder="Expiration Date"
+                            class="w-full border border-[#8a8a8a] p-3 mr-1 my-2 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a] bg-white">
+                        <input type="text" placeholder="Security Code"
+                            class="w-full border border-[#8a8a8a] p-3 my-2 text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a] bg-white">
+                        <input type="text" placeholder="Card Holder Name"
+                            class="col-span-2 w-full border border-[#8a8a8a] p-3 rounded-md text-base focus:outline-none focus:border-blue-500 placeholder:text-[#8a8a8a]  bg-white">
+                    </div>
+                </div>
+
+                <div class="mt-4 flex items-center">
+                    <input type="checkbox" id="savePayment"
+                        class="w-8 h-8 border-[#8a8a8a] rounded text-black focus:ring-black">
+                    <label for="savePayment" class="ml-3 text-base text-[#8a8a8a]">Save This Info For Future</label>
+                </div>
+
+                <button
+                    class="mt-7 w-full bg-black text-white font-medium py-4 rounded-lg text-base hover:bg-gray-800 transition shadow-sm">Pay
+                    Now</button>
+                <p class="text-center font-poppins text-xs text-[#484848] mt-9">Copyright © 2022 FASCO. All Rights
+                    Reserved.</p>
+            </div>
+        </div>
+
+        <!-- Cột phải: Đơn hàng (Order Summary) -->
+        <div class="md:border-l border-black"></div>
+        <div class="w-full md:w-1/2 h-full bg-[#f5f5f5] p-8 md:pl-12 md:py-12 min-h-screen">
+            <div class="w-full max-w-xl">
+                <!-- Sản phẩm -->
+                <div class="flex items-center justify-between mb-5">
+                    <div class="flex items-center">
+                        <div class="relative">
+                            <div class="w-[137px] h-[137px] overflow-hidden">
+                                <img src="/src/assets/img/baaodo.png" alt="Mini Dress"
+                                    class="w-full h-full object-cover">
+                            </div>
+                            <span
+                                class="absolute -top-2 -right-2 bg-red-600 text-white text-base w-5 h-5 flex items-center justify-center rounded-full border border-white">1</span>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg text-black font-Volkhov">Mini Dress With
+                                Ruffled Straps</h4>
+                            <p class="text-base text-[#484848] mt-1">Red</p>
+                        </div>
+                    </div>
+                    <span class="text-base font-poppins text-[#484848] mt-6">$100.00</span>
+                </div>
+
+                <!-- Mã giảm giá -->
+                <div class="flex gap-3 mb-8">
+                    <input type="text" placeholder="Discount code"
+                        class="flex-grow border border-[#8a8a8a] p-6 mr-4 text-base font-poppins focus:outline-none focus:border-blue-500 shadow-sm bg-white">
+                    <button
+                        class="bg-black text-white px-12 py-6 rounded-md text-base font-poppins hover:bg-gray-800 transition">Apply</button>
+                </div>
+
+                <!-- Tổng kết tiền -->
+                <div class="space-y-4 text-base">
+                    <div class="flex justify-between">
+                        <span>Subtotal</span>
+                        <span class="font-poppins text-[#484848]">$100.00</span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Shipping</span>
+                        <span class="font-poppins text-[#484848]">$40.00</span>
+                    </div>
+                    <div class="flex justify-between text-base text-black">
+                        <span>Total</span>
+                        <span>$140.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
