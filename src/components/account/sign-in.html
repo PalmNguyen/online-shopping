@@ -1,0 +1,123 @@
+<section class="w-full min-h-screen bg-[#F8F8F8] flex items-center justify-center p-4 xl:p-0 mx-auto overflow-hidden">
+    
+    <!-- KHUNG CARD UI CHÍNH -->
+    <div class="w-full max-w-md md:max-w-3xl xl:max-w-[1920px] xl:h-[1077px] max-h-screen bg-white rounded-2xl xl:rounded-[30px] border border-[#DBDBDB] overflow-hidden shadow-xl flex flex-col xl:flex-row">
+        
+        <!-- CỘT BÊN TRÁI: BANNER -->
+        <div class="w-full h-[250px] sm:h-[400px] xl:w-[949px] xl:h-full relative">
+            <img
+                src="/src/assets/img/Image_SignIn.png"
+                alt="FASCO Sign In Banner 1" 
+                class="w-full h-full object-cover absolute inset-0"
+            />
+        </div>
+
+        <!-- CỘT BÊN PHẢI: FORM CHÍNH (Đã fix responsive padding) -->
+        <div class="w-full flex flex-col bg-white p-6 sm:p-10 xl:w-[971px] xl:h-full xl:py-12 xl:px-12 2xl:pt-[91.7px] 2xl:pl-[187px] 2xl:pr-[156px] 2xl:pb-[187px] relative overflow-y-auto">
+            <!-- DIV 1: LOGO FASCO -->
+            <div class="w-full max-w-[218px] text-left mb-8 xl:mb-[82.3px]">
+                <h1 class="font-volkhov font-normal text-4xl xl:text-[66.6px] leading-none text-[#484848] w-full ">
+                    FASCO
+                </h1>
+            </div>
+                
+            <!-- DIV 2: KHUNG NỘI DUNG FORM -->
+            <div class="w-full max-w-[628px] flex flex-col items-start justify-center">
+                
+                <!-- Title Sign In To FASCO -->
+                <h2 class="font-volkhov font-normal text-2xl xl:text-[30px] leading-[40px] text-black text-left mb-6 xl:mb-[29px] w-full">
+                    Sign In To FASCO
+                </h2>
+            
+                <!-- Khung chứa 2 nút Google & Email -->
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4 xl:gap-8 2xl:gap-16 w-full mb-6 xl:mb-[84px]">
+                    <!-- Nút Google -->
+                    <button type="button" class="w-full xl:w-[294px] h-12 xl:h-[55px] bg-white border border-[#5B86E5] rounded-[8px] flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <img src="/src/assets/img/icongoogle.png" 
+                        alt="Google Icon" 
+                        class="w-[36px] h-[36px] object-contain" />
+                        <!-- Thêm whitespace-nowrap để không rớt dòng -->
+                        <span class="font-poppins font-normal text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-black whitespace-nowrap">
+                            Sign up with Google
+                        </span>
+                    </button>
+                    <!-- Nút Email -->
+                    <button type="button" class="w-full xl:w-[270px] h-12 xl:h-[55px] bg-white border-[1px] border-[#5B86E5] rounded-[8px] flex items-center justify-center gap-3 hover:bg-gray-50 transition-colors cursor-pointer">
+                        <img src="/src/assets/img/iconemail.png" 
+                        alt="Email Icon" 
+                        class="w-[42px] h-[42px] object-contain" />
+                        <!-- Thêm whitespace-nowrap để không rớt dòng -->
+                        <span class="font-poppins font-normal text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-black whitespace-nowrap">
+                            Sign up with Email
+                        </span>  
+                    </button>
+                </div>
+
+                <!-- Vạch chia — OR — -->
+                <div class="flex items-center justify-center w-full mb-6 xl:mb-[49px]">
+                    <span class="w-[30px] h-[5px] bg-[#838383]"></span>
+                    <span class="font-poppins font-bold text-xl xl:text-[30px] leading-[40px] tracking-[0.08em] text-[#838383] ml-[11px] mr-[15px] whitespace-nowrap">
+                        OR
+                    </span>
+                    <span class="w-[30px] h-[5px] bg-[#838383]"></span>
+                </div>
+
+                <!-- Form Đăng Nhập -->
+                <form action="#" method="POST" class="w-full flex flex-col items-start">
+                    
+                    <!-- Input Email -->
+                    <div class="w-full mb-6 lg:mb-[29px] text-left">
+                        <input 
+                            type="email" 
+                            placeholder="Email" 
+                            required class="w-full h-10 xl:h-[47px] bg-transparent border-b border-[#9D9D9D] text-sm text-black placeholder-[#9D9D9D] focus:outline-none focus:border-black transition-colors"
+                        />
+                    </div>
+
+                    <!-- Input Password -->
+                    <div class="w-full mb-6 lg:mb-11 text-left">
+                        <input 
+                            type="password" 
+                            placeholder="Password" 
+                            required
+                            class="w-full h-10 xl:h-[47px] bg-transparent border-b border-[#9D9D9D] text-sm text-black placeholder-[#9D9D9D] focus:outline-none focus:border-black transition-colors"
+                        />
+                    </div>
+
+                    <!-- Nút Sign In -->
+                    <button 
+                        type="submit" 
+                        class="w-full h-12 xl:h-[60px] mx-auto xl:w-[575px] flex items-center justify-center bg-black text-white rounded-[10px] font-poppins font-semibold text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] hover:bg-neutral-800 transition-all shadow-[0_20px_35px_rgba(0,0,0,0.15)] mb-4 xl:mb-[19px] cursor-pointer"
+                    >
+                        Sign In
+                    </button>
+
+                    <!-- Nút Register Now -->
+                    <a 
+                        href="?page=sign-up" 
+                        class="w-full h-12 xl:h-[60px] mx-auto xl:w-[575px] flex items-center justify-center border border-[#5B86E5] text-[#5B86E5] rounded-[8px] font-poppins font-semibold text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] hover:bg-blue-50 transition-colors mb-[6px]"
+                    >
+                        Register Now
+                    </a>
+
+                    <!-- Forget Password? -->
+                    <div class="w-full text-right">
+                        <a 
+                            href="?page=forget-password" 
+                            class="font-poppins font-bold text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-[#5B86E5] hover:underline inline-block whitespace-nowrap"
+                        >
+                            Forget Password?
+                        </a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- FOOTER (Đã fix xoá absolute để tự đẩy xuống đáy form) -->
+            <footer class="w-full flex items-center justify-end mt-auto pt-8 pb-4 xl:pb-0 pointer-events-none">
+                <p class="font-poppins font-normal text-xs xl:text-[16px] xl:leading-[40px] text-black whitespace-nowrap pointer-events-auto">
+                    FASCO Terms & Codnitions
+                </p>
+            </footer>
+        </div>
+    </div>
+</section> 
