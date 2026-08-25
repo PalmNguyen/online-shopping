@@ -57,7 +57,7 @@
         if (page === 'home') {
             loadComponent('header-container', './src/components/header/home.html');
             
-        } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'new-password') {
+        } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'confirmation'|| page === 'new-password') {
             const headerEl = document.getElementById('header-container');
             if (headerEl) {
               headerEl.innerHTML = ''; // Chỉ chạy khi headerEl khác null
