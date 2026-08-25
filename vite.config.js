@@ -5,9 +5,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
-  
- base: '/online-shopping/',
-
   build: {
     rollupOptions: {
       input: {
