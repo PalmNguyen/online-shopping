@@ -4,12 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
-    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="./src/style.css" />
   </head>
 
   <body>
     <!-- 1. CÁC KHUNG CHỨA-->
-    <!-- Đây là các vùng trống để JavaScript bơm nội dung vào -->
     <div id="header-container"></div>
     <div id="main-container"></div>
 
@@ -27,38 +26,37 @@
       
       // 2. DANH SÁCH ĐƯỜNG DẪN TRANG (ROUTES)
       const routes = {
-        'home': '/src/components/homepage.html',
-        'shop': '/src/components/shoppage.html',
-        'product': '/src/components/productpage.html',
-        'minicart': '/src/components/minicart.html',
-        'cart': '/src/components/cartpage.html',
-        'checkout': '/src/components/checkout.html',
+        'home': './src/components/homepage.html',
+        'shop': './src/components/shoppage.html',
+        'product': './src/components/productpage.html',
+        'minicart': './src/components/minicart.html',
+        'cart': './src/components/cartpage.html',
+        'checkout': './src/components/checkout.html',
 
         // Nhóm Account
-        'sign-in': '/src/components/account/sign-in.html',
-        'forget-password': '/src/components/account/forget-password.html',
-        'confirmation': '/src/components/account/confirmation.html',
-        'new-password': '/src/components/account/new-password.html',
-        'sign-up': '/src/components/account/sign-up.html',
+        'sign-in': './src/components/account/sign-in.html',
+        'forget-password': './src/components/account/forget-password.html',
+        'confirmation': './src/components/account/confirmation.html',
+        'new-password': './src/components/account/new-password.html',
+        'sign-up': './src/components/account/sign-up.html',
       };
 
-      // 3, HÀM XỬ LÝ LOGIC CHUYỂN TRANG
+      // 3. HÀM XỬ LÝ LOGIC CHUYỂN TRANG
       function renderPage() {
         const urlParams = new URLSearchParams(window.location.search);
         const page = urlParams.get('page') || 'home';
         
-        // Nếu nhập sai tên trang trên URL, mặc định đưa về trang home
         const filePath = routes[page] || routes['home'];
 
         //--- XỬ LÝ LOGIC CHỌN HEADER TÙY THEO TRANG ---
         if (page === 'home') {
-            loadComponent('header-container', '/src/components/header/home.html');
+            loadComponent('header-container', './src/components/header/home.html');
             
         } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'new-password') {
             document.getElementById('header-container').innerHTML = ''; 
 
         } else {
-            loadComponent('header-container', '/src/components/header/sub.html'); 
+            loadComponent('header-container', './src/components/header/sub.html'); 
         }
 
         loadComponent('main-container', filePath);
@@ -67,7 +65,6 @@
       // 4. CHẠY HÀM KHI NGƯỜI DÙNG TRUY CẬP
       renderPage();
 
-      // Tự động cập nhật trang khi user bấm Back/Forward trên trình duyệt
       window.addEventListener('popstate', renderPage);
     </script>
   </body>
