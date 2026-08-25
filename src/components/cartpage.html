@@ -1,0 +1,103 @@
+<div class="max-w-7xl mx-auto px-4 py-10">
+    <!-- 1. Header & Breadcrumb -->
+    <div class="flex flex-col items-center justify-center mb-10">
+        <h2 class="font-volkhov text-4xl sm:text-5xl text-black tracking-wide mb-5">
+            Shopping Cart
+        </h2>
+        <nav class="flex items-center space-x-2 text-base text-black mt-5 mb-[73px]">
+            <a href="#" class="hover:text-gray-400 transition-colors">Home</a>
+            <img src="/src/assets/img/Line.svg" alt="" class="size-2">
+            <a href="#" class="text-black hover:text-gray-400 transition-colors">Your Shopping Cart</a>
+        </nav>
+    </div>
+
+    <!-- 2. Product Table -->
+    <div class="w-full">
+        <!-- Table Header -->
+        <div class="w-full flex justify-between w-full items-center font-volkhov text-xl text-black">
+            <div class="col-span-5">Product</div>
+            <div class="col-span-2">Price</div>
+            <div class="col-span-3 text-center">Quantity</div>
+            <div class="col-span-2 text-right">Total</div>
+        </div>
+        <div class="w-full my-9 border-b-[1px] border-black"></div>
+        <!-- Product Item Row -->
+        <div class="w-full flex justify-between w-full items-center">
+            <!-- Column 1: Image & Details -->
+            <div class="col-span-5 flex w-[368px] h-[224px] items-start space-x-4 mr-5">
+                <img src="/src/assets/img/baaodo.png" alt="Product"
+                    class="w-[168px] h-[225px] mr-5 object-cover flex-shrink-0" />
+                <div class="flex flex-col justify-between">
+                    <div class="flex flex-cols">
+                        <h3
+                            class="font-volkhov font-normal flex w-[176px] h-[56px] text-xl font-bold text-black mr-11 leading-snug">
+                            Mini Dress With Ruffled Straps
+                        </h3>
+                        <!-- Column 2: Price -->
+                        <div class="col-span-2 font-volkhov font-normal text-xl text-black mr-[310px]">
+                            $14.90
+                        </div>
+                        <!-- Column 3: Quantity Stepper -->
+                        <div class="col-span-3 flex justify-center mr-[290px]">
+                            <div
+                                class="inline-flex items-center justify-between m-auto border border-8a8a8a rounded px-3 py-1 w-30 h-11 text-xl font-volkhov">
+                                <button class="text-[#171717] hover:text-gray-400">-</button>
+                                <span class="text-[#8a8a8a]">01</span>
+                                <button class="text-[#171717] hover:text-gray-400">+</button>
+                            </div>
+                        </div>
+                        <!-- Column 4: Total -->
+                        <div class="col-span-2 text-right font-volkhov font-bold text-xl text-black">
+                            $14.90
+                        </div>
+                    </div>
+                    <p class="text-xl font-poppins text-[#8a8a8a] my-4">Color : Red</p>
+                    <button
+                        class="text-xl text-[#8a8a8a] font-poppins underline hover:text-black text-left transition-colors w-max mt-4">
+                        Remove
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="w-7xl mt-11 mb-8 border-b border-black"></div>
+    </div>
+
+    <!-- 3. Cart Summary (Aligned Right) -->
+    <div class="flex justify-end pt-8">
+        <div class="w-full max-w-xl space-y-4">
+            <!-- Wrap Product Checkbox -->
+            <div class="flex items-center space-x-2 text-[#8a8a8a] ">
+                <input type="checkbox" id="wrap-product"
+                    class="w-8 h-8 border-[3px] border-black round-none cursor-pointer text-black focus:ring-black appearance-none checked:bg-black" />
+                <label for="wrap-product" class="cursor-pointer select-none">
+                    For <span class="font-poppins text-[#000000]">$10.00</span> Please Wrap
+                    The Product
+                </label>
+            </div>
+
+            <!-- Divider -->
+
+            <hr class="border-black" />
+
+            <!-- Subtotal Row -->
+            <div class="flex justify-between items-center font-volkhov text-xl font-bold text-black">
+                <span>Subtotal</span>
+                <span>$100.00</span>
+            </div>
+
+            <!-- Checkout Button -->
+            <button
+                class="w-full bg-black text-white text-base py-3 rounded-lg font-poppins hover:bg-gray-800 transition-colors shadow-2xl">
+                Checkout
+            </button>
+
+            <!-- View Cart Link -->
+            <div class="text-center pt-1">
+                <a href="#" class="font-volkhov text-xl text-black underline hover:text-gray-600 transition-colors">
+                    View Cart
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
