@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
     <link rel="stylesheet" href="./src/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
   </head>
 
   <body>
@@ -14,13 +16,17 @@
 
     <script type="module">
       // Hàm fetch đọc file HTML và nhét vào div
+
       function loadComponent(id, filePath) {
         fetch(filePath)
           .then(res => {
             if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
             return res.text();
           })
-          .then(data => document.getElementById(id).innerHTML = data)
+          .then(data => {
+            const targetEl = document.getElementById(id);
+            if (targetEl) targetEl.innerHTML = data; // Thêm if để tránh crash web
+          })
           .catch(err => console.error(err));
       }
       
@@ -53,7 +59,10 @@
             loadComponent('header-container', './src/components/header/home.html');
             
         } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'new-password') {
-            document.getElementById('header-container').innerHTML = ''; 
+            const headerEl = document.getElementById('header-container');
+            if (headerEl) {
+              headerEl.innerHTML = ''; // Chỉ chạy khi headerEl khác null
+            }
 
         } else {
             loadComponent('header-container', './src/components/header/sub.html'); 
