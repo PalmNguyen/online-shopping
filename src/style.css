@@ -1,9 +1,11 @@
 /* 1. Tải Font từ Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Volkhov:wght@400;700&display=swap');
 @import "tailwindcss";
-@source "./components";
 
-/* 2. Nạp tệp font local (Sửa lại đường dẫn nếu bạn để file ở chỗ khác) */
+/* Sửa lại đường dẫn source để Tailwind v4 quét đúng tất cả HTML trong components */
+@source "./components/**/*.html";
+
+/* 2. Nạp tệp font local */
 @font-face {
   font-family: 'Digital Numbers';
   src: url('./assets/fonts/DigitalNumbers.ttf') format('truetype');
@@ -33,6 +35,7 @@
   --color-light-gray: #DADADA;
   --color-platinum: #DEDFE1;
   --color-neutral-gray: #777777;
+
   /* Font chữ & Bo góc */
   --font-volkhov: "Volkhov", serif;
   --font-jost: "Jost", sans-serif;
