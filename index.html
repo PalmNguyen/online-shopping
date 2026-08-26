@@ -6,18 +6,19 @@
     <title>Online Shopping</title>
     <link rel="stylesheet" href="./src/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-
   </head>
 
   <body>
-    <!-- 1. CÁC KHUNG CHỨA-->
+    <!-- 1. CÁC KHUNG CHỨA -->
     <div id="header-container"></div>
     <div id="main-container"></div>
 
-    <script type="module">
-      // Hàm fetch đọc file HTML và nhét vào div
+    <!-- Nạp file JS bên ngoài -->
+    <script src="./src/js/signin.js"></script>
 
-      function loadComponent(id, filePath) {
+    <script type="module">
+      // 1. Cập nhật hàm fetch có nhận thêm callback
+      function loadComponent(id, filePath, callback) {
         fetch(filePath)
           .then(res => {
             if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
@@ -25,7 +26,11 @@
           })
           .then(data => {
             const targetEl = document.getElementById(id);
-            if (targetEl) targetEl.innerHTML = data; // Thêm if để tránh crash web
+            if (targetEl) {
+              targetEl.innerHTML = data;
+              // Chạy hàm JS tương ứng sau khi HTML đã render vào giao diện
+              if (callback) callback();
+            }
           })
           .catch(err => console.error(err));
       }
@@ -60,14 +65,19 @@
         } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'confirmation'|| page === 'new-password') {
             const headerEl = document.getElementById('header-container');
             if (headerEl) {
-              headerEl.innerHTML = ''; // Chỉ chạy khi headerEl khác null
+              headerEl.innerHTML = '';
             }
 
         } else {
             loadComponent('header-container', './src/components/header/sub.html'); 
         }
 
-        loadComponent('main-container', filePath);
+        // Tải trang main và kích hoạt JS tương ứng với trang đó
+        loadComponent('main-container', filePath, () => {
+          if (page === 'sign-in' && typeof initSignInEvents === 'function') {
+            initSignInEvents();
+          }
+        });
       }
 
       // 4. CHẠY HÀM KHI NGƯỜI DÙNG TRUY CẬP
