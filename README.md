@@ -1,10 +1,58 @@
-# Design System: Fashion Online Shopping Website
+# BÁO CÁO BÀI TẬP LỚN
 
-Tài liệu hướng dẫn hệ thống màu sắc (Color Palette) và kiểu chữ (Typography) chuẩn dành cho giao diện website thời trang.
+**MÔN:** Thiết kế Web (INTE03010)
 
-## 1. Hệ Thống Màu Sắc (Color Palette)
+**Giảng viên phụ trách:** Võ Việt Khoa
 
-### 1.1 Nền (Background Colors)
+**Tên đề tài:** Cửa hàng thời trang (E-commerce)
+
+---
+
+## 1. Thông tin Nhóm - Lớp: TH1007-IT2501
+Danh sách thành viên (3 người):
+1. Nguyễn Hoàng Thiên Phúc (Nhóm trưởng)
+2. Huỳnh Phi Hùng
+3. Bùi Trọng Sang
+
+## 2. Liên kết dự án (Links)
+* **Link Figma:** https://www.figma.com/design/FUdf8VcsUQcmQ8rCWdYpch/Online-Shopping-Website-Design---eCommerce-Store-Website---UI-Kit--Community-?node-id=0-1&p=f&m=draw
+* **Link GitHub:** https://palmnguyen.github.io/online-shopping/
+
+## 3. Cấu trúc thư mục (Folder Structure)
+online-shopping/
+├── dist/
+├── node_modules/
+├── src/
+│   ├── assets/
+│   │   ├── fonts/
+│   │   └── img/
+│   ├── components/
+│   │   ├── account/
+│   │   │   ├── confirmation.html
+│   │   │   ├── forget-password.html
+│   │   │   ├── new-password.html
+│   │   │   ├── sign-in.html
+│   │   │   └── sign-up.html
+│   │   ├── header/
+│   │   │   ├── home.html
+│   │   │   └── sub.html
+│   │   ├── cartpage.html
+│   │   ├── checkout.html
+│   │   ├── homepage.html
+│   │   ├── productpage.html
+│   │   └── shoppage.html
+│   ├── js/
+│   └── style.css
+├── .gitignore
+├── index.html
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+
+## 4. Hệ Thống Màu Sắc (Color Palette)
+
+### 4.1 Nền (Background Colors)
 | Vị trí / Thuộc tính | Mã Hex |
 | :--- | :--- |
 | **Nền chính** (Background toàn trang) | `#FFFFFF` |
@@ -16,7 +64,7 @@ Tài liệu hướng dẫn hệ thống màu sắc (Color Palette) và kiểu ch
 | **Nền phụ:** Vùng chọn số lượng sản phẩm | `#f1f1f1` |
 | **Nền lựa chọn (khác)** | `#f3f3f3` |
 
-### 1.2 Màu Chữ (Text Colors)
+### 4.2 Màu Chữ (Text Colors)
 #### Chữ Chính
 | Vị trí / Thuộc tính | Mã Hex |
 | :--- | :--- |
@@ -42,17 +90,15 @@ Tài liệu hướng dẫn hệ thống màu sắc (Color Palette) và kiểu ch
 | **Liên kết (Links):** Login, resent now,... | `#5B86E5` |
 | **Trạng thái sản phẩm (còn/hết hàng)** | `#ff4646` |
 
----
+## 5. Quy Định Kiểu Chữ (Typography)
 
-## 2. Quy Định Kiểu Chữ (Typography)
-
-### 2.1 Font Ink
+### 5.1 Font Ink
 | Font Family | Ứng dụng |
 | :--- | :--- |
 | **Poppins** | Navigation, footer, thông tin trang, button (sign in, buy now,...), text chung, timer,... |
 | **Volkhov** | Tiêu đề lớn (Heading), tên khách hàng đánh giá, minicart (price, viewcart, subtotal), free ship,... |
 
-### 2.2 Font Muted
+### 5.2 Font Muted
 | Font Family | Ứng dụng |
 | :--- | :--- |
 | **Jost** | Thời gian vận chuyển, sale, prod_form-buttons,... |

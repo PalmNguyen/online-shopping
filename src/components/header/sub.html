@@ -1,0 +1,72 @@
+<header class="w-full mt-6 md:mt-[70px]">
+  <nav class="w-full max-w-7xl mx-auto px-4 xl:px-0 flex items-center justify-between">
+    
+    <!-- 1. LOGO  -->
+    <a href="?page=home" class="font-volkhov text-3xl md:text-[52px] font-normal leading-none text-dark-brown">
+      FASCO
+    </a>
+
+    <!-- 2. MENU DESKTOP  -->
+    <ul class="hidden md:flex flex-row gap-[70px] font-poppins font-normal text-base leading-none text-dark-brown">
+      <li>
+        <a href="?page=home" class="hover:text-gray-500 transition-colors">Home</a>
+      </li>
+      <li>
+        <a href="?page=shop" class="hover:text-gray-500 transition-colors">Shop</a>
+      </li>
+      <li>
+        <a href="?page=product" class="hover:text-gray-500 transition-colors">Products</a>
+      </li>
+      <li>
+        <a href="#" class="flex items-center gap-1 hover:text-gray-500 transition-colors">
+          Pages
+          <img src="./src/assets/img/arrow-down.svg" alt="Dropdown" />
+        </a>
+      </li>
+    </ul>
+
+    <!-- 3. CỤM ICON HÀNH ĐỘNG + NÚT MENU MOBILE -->
+    <div class="flex items-center">
+      <!-- Icon 1: Search (py-12px px-17px) -->
+      <button type="button" aria-label="Search" class="px-2 md:px-[17px] py-[12px] hover:opacity-75 cursor-pointer">
+        <img src="./src/assets/img/search.svg" alt="Search" />
+      </button>
+
+      <!-- Icon 2: Account (px-13px py-19px) -->
+      <a href="?page=sign-in" aria-label="Account" class="px-2 md:px-[13px] py-[19px] hover:opacity-75 cursor-pointer">
+        <img src="./src/assets/img/user.svg" alt="Account" />
+      </a>
+
+      <!-- Icon 3: Wishlist (px-13px py-19px) -->
+      <button type="button" aria-label="Wishlist" class="px-2 md:px-[13px] py-[19px] hover:opacity-75 cursor-pointer">
+        <img src="./src/assets/img/starheadersub.svg" alt="Wishlist" />
+      </button>
+
+      <!-- Icon 4: Cart (pl-13px pr-5px py-13px) -->
+      <button type="button" id="open-cart-btn" aria-label="Open Cart" class="relative pl-2 md:pl-[13px] pr-[5px] py-[13px] hover:opacity-75 cursor-pointer">
+        <img src="./src/assets/img/cart.svg" alt="Cart" />
+      </button>
+
+      <!-- Nút Hamburger Menu (Chỉ hiện trên Mobile < md) -->
+      <button
+      aria-label="Toggle Navigation Menu"
+      class="md:hidden p-2 text-black cursor-pointer focus:outline-none"
+    >
+      <svg
+        class="w-7 h-7"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
+    </div>
+  </nav>
+</header>
