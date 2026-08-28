@@ -4,81 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
-    <script type="module" crossorigin src="/online-shopping/assets/main-CzucTRev.js"></script>
-    <link rel="stylesheet" crossorigin href="/online-shopping/assets/main-BhsXAeUB.css">
+    <script type="module" crossorigin src="/online-shopping/assets/index-w8FALGdr.js"></script>
+    <link rel="stylesheet" crossorigin href="/online-shopping/assets/index-ThGj0lyE.css">
   </head>
 
   <body>
     <div id="header-container"></div>
     <div id="main-container"></div>
-
-    <script>
-      function loadComponent(id, filePath, callback) {
-        // Tự động xử lý đường dẫn tuyệt đối cho GitHub Pages
-        const cleanPath = filePath.replace('./', '');
-        
-        fetch(cleanPath)
-          .then(res => {
-            if (!res.ok) throw new Error("Không tìm thấy file: " + cleanPath);
-            return res.text();
-          })
-          .then(data => {
-            const targetEl = document.getElementById(id);
-            if (targetEl) {
-              targetEl.innerHTML = data;
-              if (callback) callback();
-            }
-          })
-          .catch(err => console.error("Lỗi load component:", err));
-      }
-      
-      const routes = {
-        'home': 'components/homepage.html',
-        'shop': 'components/shoppage.html',
-        'product': 'components/productpage.html',
-        'minicart': 'components/minicart.html',
-        'cart': 'components/cartpage.html',
-        'checkout': 'components/checkout.html',
-
-        'sign-in': 'components/account/sign-in.html',
-        'forget-password': 'components/account/forget-password.html',
-        'confirmation': 'components/account/confirmation.html',
-        'new-password': 'components/account/new-password.html',
-        'sign-up': 'components/account/sign-up.html',
-      };
-
-      window.renderPage = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const page = urlParams.get('page') || 'home';
-        
-        const filePath = routes[page] || routes['home'];
-
-        if (page === 'home') {
-            loadComponent('header-container', 'components/header/home.html');
-        } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
-            const headerEl = document.getElementById('header-container');
-            if (headerEl) headerEl.innerHTML = '';
-        } else {
-            loadComponent('header-container', 'components/header/sub.html'); 
-        }
-
-        loadComponent('main-container', filePath, () => {
-          if (page === 'sign-in' && typeof initSignInEvents === 'function') {
-            initSignInEvents();
-          } else if (page === 'forget-password' && typeof initForgetPasswordEvents === 'function') {
-            initForgetPasswordEvents();
-          } else if (page === 'confirmation' && typeof window.initConfirmationEvents === 'function') {
-            window.initConfirmationEvents();
-          } else if (page === 'new-password' && typeof window.initNewPasswordEvents === 'function') {
-            window.initNewPasswordEvents();
-          }
-        });
-      }
-
-      renderPage();
-      window.addEventListener('popstate', renderPage);
-    </script>
-
-    <!-- Nạp JS script -->
+
   </body>
 </html>
