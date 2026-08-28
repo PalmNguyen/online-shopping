@@ -19,35 +19,42 @@ Danh sách thành viên (3 người):
 * **Link GitHub:** https://palmnguyen.github.io/online-shopping/
 
 ## 3. Cấu trúc thư mục (Folder Structure)
+
+```text
 online-shopping/
-├── dist/
-├── node_modules/
-├── src/
+├── public/
 │   ├── assets/
 │   │   ├── fonts/
+│   │   │   └── DigitalNumbers400.ttf
 │   │   └── img/
-│   ├── components/
-│   │   ├── account/
-│   │   │   ├── confirmation.html
-│   │   │   ├── forget-password.html
-│   │   │   ├── new-password.html
-│   │   │   ├── sign-in.html
-│   │   │   └── sign-up.html
-│   │   ├── header/
-│   │   │   ├── home.html
-│   │   │   └── sub.html
-│   │   ├── cartpage.html
-│   │   ├── checkout.html
-│   │   ├── homepage.html
-│   │   ├── productpage.html
-│   │   └── shoppage.html
+│   └── components/
+│       ├── account/
+│       │   ├── confirmation.html
+│       │   ├── forget-password.html
+│       │   ├── new-password.html
+│       │   ├── sign-in.html
+│       │   └── sign-up.html
+│       ├── header/
+│       │   ├── home.html
+│       │   └── sub.html
+│       ├── cartpage.html
+│       ├── checkout.html
+│       ├── homepage.html
+│       ├── productpage.html
+│       └── shoppage.html
+├── src/
 │   ├── js/
+│   │   └── account/
+│   │       ├── confirmation.js
+│   │       ├── forgetpassword.js
+│   │       ├── newpassword.js
+│   │       ├── signin.js
+│   │       └── signup.js
 │   └── style.css
 ├── .gitignore
 ├── index.html
 ├── package-lock.json
 ├── package.json
-├── README.md
 └── vite.config.js
 
 ## 4. Hệ Thống Màu Sắc (Color Palette)
