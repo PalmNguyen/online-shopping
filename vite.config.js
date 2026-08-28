@@ -4,6 +4,7 @@ import { resolve } from 'path'
 import glob from 'fast-glob'
 
 export default defineConfig({
+  base: '/online-shopping/',
   plugins: [
     tailwindcss(),
   ],

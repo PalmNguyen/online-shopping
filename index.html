@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
 
@@ -33,18 +32,18 @@
       }
       
       const routes = {
-        'home': 'src/components/homepage.html',
-        'shop': 'src/components/shoppage.html',
-        'product': 'src/components/productpage.html',
-        'minicart': 'src/components/minicart.html',
-        'cart': 'src/components/cartpage.html',
-        'checkout': 'src/components/checkout.html',
+        'home': 'components/homepage.html',
+        'shop': 'components/shoppage.html',
+        'product': 'components/productpage.html',
+        'minicart': 'components/minicart.html',
+        'cart': 'components/cartpage.html',
+        'checkout': 'components/checkout.html',
 
-        'sign-in': 'src/components/account/sign-in.html',
-        'forget-password': 'src/components/account/forget-password.html',
-        'confirmation': 'src/components/account/confirmation.html',
-        'new-password': 'src/components/account/new-password.html',
-        'sign-up': 'src/components/account/sign-up.html',
+        'sign-in': 'components/account/sign-in.html',
+        'forget-password': 'components/account/forget-password.html',
+        'confirmation': 'components/account/confirmation.html',
+        'new-password': 'components/account/new-password.html',
+        'sign-up': 'components/account/sign-up.html',
       };
 
       window.renderPage = function() {
@@ -54,12 +53,12 @@
         const filePath = routes[page] || routes['home'];
 
         if (page === 'home') {
-            loadComponent('header-container', 'src/components/header/home.html');
+            loadComponent('header-container', 'components/header/home.html');
         } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
             const headerEl = document.getElementById('header-container');
             if (headerEl) headerEl.innerHTML = '';
         } else {
-            loadComponent('header-container', 'src/components/header/sub.html'); 
+            loadComponent('header-container', 'components/header/sub.html'); 
         }
 
         loadComponent('main-container', filePath, () => {
@@ -80,10 +79,10 @@
     </script>
 
     <!-- Nạp JS script -->
-    <script src="./src/js/account/signin.js"></script>
-    <script src="./src/js/account/forgetpassword.js"></script>
-    <script src="./src/js/account/confirmation.js"></script>
-    <script src="./src/js/account/newpassword.js"></script>
-    <script src="./src/js/account/signup.js"></script>
+    <script type="module" src="./src/js/account/signin.js"></script>
+    <script type="module" src="./src/js/account/forgetpassword.js"></script>
+    <script type="module" src="./src/js/account/confirmation.js"></script>
+    <script type="module" src="./src/js/account/newpassword.js"></script>
+    <script type="module" src="./src/js/account/signup.js"></script>
   </body>
 </html>
