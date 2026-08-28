@@ -1,93 +1,101 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Shopping</title>
-    <link rel="stylesheet" href="./src/style.css" />
-  </head>
 
-  <body>
-    <div id="header-container"></div>
-    <div id="main-container"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Shopping</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
 
-    <script type="module">
-      function loadComponent(id, filePath, callback) {
-        const cleanPath = filePath.replace('./', '');
-        
-        fetch(cleanPath)
-          .then(res => {
-            if (!res.ok) throw new Error("Không tìm thấy file: " + cleanPath);
-            return res.text();
-          })
-          .then(data => {
-            const targetEl = document.getElementById(id);
-            if (targetEl) {
-              targetEl.innerHTML = data;
-              if (callback) callback();
-            }
-          })
-          .catch(err => console.error("Lỗi load component:", err));
-      }
-      
-      const routes = {
-        'home': 'components/homepage.html',
-        'shop': 'components/shoppage.html',
-        'product': 'components/productpage.html',
-        'minicart': 'components/minicart.html',
-        'cart': 'components/cartpage.html',
-        'checkout': 'components/checkout.html',
+<body>
+  <div id="header-container"></div>
+  <div id="main-container"></div>
 
-        'sign-in': 'components/account/sign-in.html',
-        'forget-password': 'components/account/forget-password.html',
-        'confirmation': 'components/account/confirmation.html',
-        'new-password': 'components/account/new-password.html',
-        'sign-up': 'components/account/sign-up.html',
-      };
+  <script type="module">
+    function loadComponent(id, filePath, callback) {
+      const cleanPath = filePath.replace('./', '');
 
-      window.renderPage = function() {
-        const urlParams = new URLSearchParams(window.location.search);
-        const page = urlParams.get('page') || 'home';
-        
-        const filePath = routes[page] || routes['home'];
-
-        // 1. Load Header
-        if (page === 'home') {
-            loadComponent('header-container', 'components/header/home.html');
-        } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
-            const headerEl = document.getElementById('header-container');
-            if (headerEl) headerEl.innerHTML = '';
-        } else {
-            loadComponent('header-container', 'components/header/sub.html'); 
-        }
-
-        // 2. Load Main & Nạp JS theo từng trang
-        loadComponent('main-container', filePath, async () => {
-          try {
-            if (page === 'sign-in') {
-              const module = await import('./src/js/account/signin.js');
-              if (module.initSignInEvents) module.initSignInEvents();
-            } else if (page === 'forget-password') {
-              const module = await import('./src/js/account/forgetpassword.js');
-              if (module.initForgetPasswordEvents) module.initForgetPasswordEvents();
-            } else if (page === 'confirmation') {
-              const module = await import('./src/js/account/confirmation.js');
-              if (module.initConfirmationEvents) module.initConfirmationEvents();
-            } else if (page === 'new-password') {
-              const module = await import('./src/js/account/newpassword.js');
-              if (module.initNewPasswordEvents) module.initNewPasswordEvents();
-            } else if (page === 'sign-up') {
-              const module = await import('./src/js/account/signup.js');
-              if (module.initSignUpEvents) module.initSignUpEvents();
-            }
-          } catch (err) {
-            console.error(`Lỗi nạp file JS cho trang ${page}:`, err);
+      fetch(cleanPath)
+        .then(res => {
+          if (!res.ok) throw new Error("Không tìm thấy file: " + cleanPath);
+          return res.text();
+        })
+        .then(data => {
+          const targetEl = document.getElementById(id);
+          if (targetEl) {
+            targetEl.innerHTML = data;
+            if (callback) callback();
           }
-        });
+        })
+        .catch(err => console.error("Lỗi load component:", err));
+    }
+
+    const routes = {
+      'home': 'components/homepage.html',
+      'shop': 'components/shoppage.html',
+      'product': 'components/productpage.html',
+      'minicart': 'components/minicart.html',
+      'cart': 'components/cartpage.html',
+      'checkout': 'components/checkout.html',
+
+      'sign-in': 'components/account/sign-in.html',
+      'forget-password': 'components/account/forget-password.html',
+      'confirmation': 'components/account/confirmation.html',
+      'new-password': 'components/account/new-password.html',
+      'sign-up': 'components/account/sign-up.html',
+    };
+
+    window.renderPage = function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const page = urlParams.get('page') || 'home';
+
+      const filePath = routes[page] || routes['home'];
+
+      // 1. Load Header
+      if (page === 'home') {
+        loadComponent('header-container', 'components/header/home.html');
+      } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
+        const headerEl = document.getElementById('header-container');
+        if (headerEl) headerEl.innerHTML = '';
+      } else {
+        loadComponent('header-container', 'components/header/sub.html');
       }
 
-      window.addEventListener('DOMContentLoaded', renderPage);
-      window.addEventListener('popstate', renderPage);
-    </script>
-  </body>
+      // 2. Load Main & Nạp JS theo từng trang
+      loadComponent('main-container', filePath, async () => {
+        try {
+          if (page === 'sign-in') {
+            const module = await import('./src/js/account/signin.js');
+            if (module.initSignInEvents) module.initSignInEvents();
+          } else if (page === 'forget-password') {
+            const module = await import('./src/js/account/forgetpassword.js');
+            if (module.initForgetPasswordEvents) module.initForgetPasswordEvents();
+          } else if (page === 'confirmation') {
+            const module = await import('./src/js/account/confirmation.js');
+            if (module.initConfirmationEvents) module.initConfirmationEvents();
+          } else if (page === 'new-password') {
+            const module = await import('./src/js/account/newpassword.js');
+            if (module.initNewPasswordEvents) module.initNewPasswordEvents();
+          } else if (page === 'sign-up') {
+            const module = await import('./src/js/account/signup.js');
+            if (module.initSignUpEvents) module.initSignUpEvents();
+          } else if (page === 'cart') {
+            const module = await import('./src/js/cart.js');
+            if (module.initCartEvents) module.initCartEvents();
+          } else if (page === 'checkout') {
+            const module = await import('./src/js/checkout.js');
+            if (module.initCheckoutEvents) module.initCheckoutEvents();
+          }
+        } catch (err) {
+          console.error(`Lỗi nạp file JS cho trang ${page}:`, err);
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', renderPage);
+    window.addEventListener('popstate', renderPage);
+  </script>
+</body>
+
 </html>

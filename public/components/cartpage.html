@@ -6,103 +6,89 @@
         </h2>
         <nav class="flex items-center space-x-2 text-base text-black mt-5 mb-[73px]">
             <a href="?page=home" class="hover:text-gray-400 transition-colors">Home</a>
-            <img src="./src/assets/img/line.svg" alt="" class="size-2">
+            <span>&gt;</span>
             <a href="#" class="text-black hover:text-gray-400 transition-colors">Your Shopping Cart</a>
         </nav>
     </div>
 
     <!-- 2. Product Table -->
     <div class="w-full">
-        <!-- Table Header -->
-        <div class="w-full flex justify-between w-full items-center font-volkhov text-xl text-black">
+        <!-- Table Header (CHỈ HIỆN TRÊN DESKTOP) -->
+        <div class="hidden lg:flex justify-between w-full items-center font-volkhov text-xl text-black">
             <div class="col-span-5">Product</div>
             <div class="col-span-2">Price</div>
             <div class="col-span-3 text-center">Quantity</div>
             <div class="col-span-2 text-right">Total</div>
         </div>
-        <div class="w-full my-9 border-b-[1px] border-black"></div>
-        <!-- Product Item Row -->
-        <div class="w-full flex justify-between w-full items-center">
-            <!-- Column 1: Image & Details -->
-            <div class="col-span-5 flex w-[368px] h-[224px] items-start space-x-4 mr-5">
-                <img src="./src/assets/img/baaodo.png" alt="Product"
-                    class="w-[168px] h-[225px] mr-5 object-cover flex-shrink-0" />
-                <div class="flex flex-col justify-between">
-                    <div class="flex flex-cols">
-                        <h3
-                            class="font-volkhov font-normal flex w-[176px] h-[56px] text-xl font-bold text-black mr-11 leading-snug">
-                            Mini Dress With Ruffled Straps
-                        </h3>
-                        <!-- Column 2: Price -->
-                        <div class="col-span-2 font-volkhov font-normal text-xl text-black mr-[310px]">
-                            $14.90
-                        </div>
-                        <!-- Column 3: Quantity Stepper -->
-                        <div class="col-span-3 flex justify-center mr-[290px]">
-                            <div
-                                class="inline-flex items-center justify-between m-auto border border-8a8a8a rounded px-3 py-1 w-30 h-11 text-xl font-volkhov">
-                                <button class="text-[#171717] hover:text-gray-400">-</button>
-                                <span class="text-[#8a8a8a]">01</span>
-                                <button class="text-[#171717] hover:text-gray-400">+</button>
-                            </div>
-                        </div>
-                        <!-- Column 4: Total -->
-                        <div class="col-span-2 text-right font-volkhov font-bold text-xl text-black">
-                            $14.90
-                        </div>
-                    </div>
-                    <p class="text-xl font-poppins text-[#8a8a8a] my-4">Color : Red</p>
-                    <button
-                        class="text-xl text-[#8a8a8a] font-poppins underline hover:text-black text-left transition-colors w-max mt-4">
-                        Remove
-                    </button>
-                </div>
-            </div>
-        </div>
+        <div id="desktop-divider" class="hidden lg:block w-full my-9 border-b-[1px] border-black"></div>
+
+        <!-- Khối chứa danh sách giỏ hàng do JS tự sinh ra sẽ nằm ở đây -->
+        <div id="cart-table-body" class="w-full flex flex-col space-y-6"></div>
+
         <div class="w-7xl mt-11 mb-8 border-b border-black"></div>
     </div>
 
-    <!-- 3. Cart Summary (Aligned Right) -->
-    <div class="flex justify-end pt-8">
-        <div class="w-full max-w-xl space-y-4">
-            <!-- Wrap Product Checkbox -->
-            <div class="flex items-center space-x-2 text-[#8a8a8a] ">
-                <input type="checkbox" id="wrap-product"
-                    class="w-8 h-8 border-[3px] border-black round-none cursor-pointer text-black focus:ring-black appearance-none checked:bg-black" />
-                <label for="wrap-product" class="cursor-pointer select-none">
-                    For <span class="font-poppins text-[#000000]">$10.00</span> Please Wrap
-                    The Product
+    <!-- 3. Cart Summary -->
+    <div class="w-full">
+
+        <!-- ================= GIAO DIỆN SUMMARY DESKTOP (Giữ nguyên gốc) ================= -->
+        <div class="hidden lg:flex justify-end pt-8">
+            <div class="w-full max-w-xl space-y-4">
+                <div class="flex items-center space-x-2 text-[#8a8a8a] ">
+                    <input type="checkbox"
+                        class="sync-wrap-cb w-8 h-8 border-[3px] border-black round-none cursor-pointer text-black focus:ring-black accent-black" />
+                    <label class="cursor-pointer select-none">
+                        For <span class="font-poppins text-[#000000]">$10.00</span> Please Wrap The Product
+                    </label>
+                </div>
+                <hr class="border-black" />
+                <div class="flex justify-between items-center font-volkhov text-xl font-bold text-black">
+                    <span>Subtotal</span>
+                    <span class="sync-subtotal-val">$100.00</span>
+                </div>
+                <a href="?page=checkout"
+                    class="w-full h-[56px] xl:h-[66px] bg-black text-white font-poppins text-base font-normal rounded-[10px] shadow-[0px_20px_35px_rgba(0,0,0,0.15)] hover:opacity-90 transition-all cursor-pointer flex items-center justify-center block">
+                    Checkout
+                </a>
+                <div class="text-center pt-1">
+                    <a href="#" class="font-volkhov text-xl text-black underline hover:text-gray-600 transition-colors">
+                        View Cart
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= GIAO DIỆN SUMMARY MOBILE (Theo ảnh thiết kế) ================= -->
+        <div class="flex lg:hidden flex-col w-full pt-2">
+            <div class="flex items-center space-x-3 mb-6">
+                <input type="checkbox"
+                    class="sync-wrap-cb w-5 h-5 border-[1px] border-gray-400 rounded-sm cursor-pointer text-black focus:ring-black accent-black" />
+                <label class="cursor-pointer select-none font-poppins text-sm text-[#8a8a8a]">
+                    For <span class="text-[#000000]">$10.00</span> Please Wrap The Product
                 </label>
             </div>
-
-            <!-- Divider -->
-
-            <hr class="border-black" />
-
-            <!-- Subtotal Row -->
-            <div class="flex justify-between items-center font-volkhov text-xl font-bold text-black">
+            <hr class="border-t border-gray-300 mb-6" />
+            <div class="flex justify-between items-center font-volkhov text-xl font-bold text-black mb-6">
                 <span>Subtotal</span>
-                <span>$100.00</span>
+                <span class="sync-subtotal-val">$100.00</span>
             </div>
-
-            <!-- Checkout Button -->
             <a href="?page=checkout"
-                class="w-full h-[56px] xl:h-[66px] bg-black text-white font-poppins text-base font-normal rounded-[10px] shadow-[0px_20px_35px_rgba(0,0,0,0.15)] hover:opacity-90 transition-all cursor-pointer flex items-center justify-center block">
+                class="w-full h-[52px] bg-black text-white font-poppins text-base font-normal rounded-lg hover:opacity-90 transition-all flex items-center justify-center mb-4">
                 Checkout
             </a>
-
-            <!-- View Cart Link -->
-            <div class="text-center pt-1">
-                <a href="#" class="font-volkhov text-xl text-black underline hover:text-gray-600 transition-colors">
+            <div class="text-center">
+                <a href="#"
+                    class="font-volkhov text-base font-bold text-black underline hover:text-gray-600 transition-colors">
                     View Cart
                 </a>
             </div>
         </div>
+
     </div>
     <!-- SUBSCRIBE SECTION -->
     <section class="w-full overflow-hidden px-4 mt-[109px]">
         <div class="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-8">
-            <img src="./src/assets/img/imagesubsribe.png" alt="Subscriber Fashion Model Left"
+            <img src="./assets/img/imagesubsribe.png" alt="Subscriber Fashion Model Left"
                 class="hidden lg:block w-auto max-w-[320px] xl:max-w-[390px] h-auto object-contain flex-shrink-0" />
 
             <div class="w-full max-w-[631px] flex flex-col gap-8 text-center items-center">
@@ -133,7 +119,7 @@
                 </form>
             </div>
 
-            <img src="./src/assets/img/imagesubsribe-1.png" alt="Subscriber Fashion Model Right"
+            <img src="./assets/img/imagesubsribe-1.png" alt="Subscriber Fashion Model Right"
                 class="hidden lg:block w-auto max-w-[320px] xl:max-w-[390px] h-auto object-contain flex-shrink-0" />
         </div>
     </section>
@@ -143,7 +129,7 @@
         <div class="max-w-[1440px] mx-auto flex flex-col gap-10 sm:gap-12">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-0">
                 <a href="#" class="flex-shrink-0" aria-label="FASCO Homepage">
-                    <img src="./src/assets/img/FASCO.svg" alt="FASCO Official Logo" class="h-8 w-auto" />
+                    <img src="./assets/img/FASCO.svg" alt="FASCO Official Logo" class="h-8 w-auto" />
                 </a>
 
                 <nav aria-label="Footer Navigation">
