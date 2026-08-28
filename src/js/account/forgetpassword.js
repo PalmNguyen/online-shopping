@@ -1,4 +1,4 @@
-function initForgetPasswordEvents() {
+export function initForgetPasswordEvents() {
   const forgetForm = document.getElementById("forget-password-form");
   if (!forgetForm) return;
 

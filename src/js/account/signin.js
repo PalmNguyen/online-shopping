@@ -1,4 +1,4 @@
-function initSignInEvents() {
+export function initSignInEvents() {
     const signinForm = document.getElementById('signin-form');
     const emailInput = document.getElementById('signin-email');
     const passwordInput = document.getElementById('signin-password');

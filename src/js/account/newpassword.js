@@ -1,4 +1,4 @@
-window.initNewPasswordEvents = function () {
+export function initNewPasswordEvents() {
   const newPasswordForm = document.getElementById("new-password-form");
   const passwordInput = document.getElementById("new-password");
   const confirmPasswordInput = document.getElementById("confirm-password");

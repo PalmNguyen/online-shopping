@@ -1,4 +1,4 @@
-window.initConfirmationEvents = function () {
+export function initConfirmationEvents() {
   const confirmForm = document.getElementById("confirmation-form");
   const codeInput = document.getElementById("confirmation-code");
   const resendBtn = document.getElementById("resend-btn");

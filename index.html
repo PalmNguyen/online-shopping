@@ -11,9 +11,8 @@
     <div id="header-container"></div>
     <div id="main-container"></div>
 
-    <script>
+    <script type="module">
       function loadComponent(id, filePath, callback) {
-        // Tự động xử lý đường dẫn tuyệt đối cho GitHub Pages
         const cleanPath = filePath.replace('./', '');
         
         fetch(cleanPath)
@@ -52,6 +51,7 @@
         
         const filePath = routes[page] || routes['home'];
 
+        // 1. Load Header
         if (page === 'home') {
             loadComponent('header-container', 'components/header/home.html');
         } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
@@ -61,28 +61,33 @@
             loadComponent('header-container', 'components/header/sub.html'); 
         }
 
-        loadComponent('main-container', filePath, () => {
-          if (page === 'sign-in' && typeof initSignInEvents === 'function') {
-            initSignInEvents();
-          } else if (page === 'forget-password' && typeof initForgetPasswordEvents === 'function') {
-            initForgetPasswordEvents();
-          } else if (page === 'confirmation' && typeof window.initConfirmationEvents === 'function') {
-            window.initConfirmationEvents();
-          } else if (page === 'new-password' && typeof window.initNewPasswordEvents === 'function') {
-            window.initNewPasswordEvents();
+        // 2. Load Main & Nạp JS theo từng trang
+        loadComponent('main-container', filePath, async () => {
+          try {
+            if (page === 'sign-in') {
+              const module = await import('./src/js/account/signin.js');
+              if (module.initSignInEvents) module.initSignInEvents();
+            } else if (page === 'forget-password') {
+              const module = await import('./src/js/account/forgetpassword.js');
+              if (module.initForgetPasswordEvents) module.initForgetPasswordEvents();
+            } else if (page === 'confirmation') {
+              const module = await import('./src/js/account/confirmation.js');
+              if (module.initConfirmationEvents) module.initConfirmationEvents();
+            } else if (page === 'new-password') {
+              const module = await import('./src/js/account/newpassword.js');
+              if (module.initNewPasswordEvents) module.initNewPasswordEvents();
+            } else if (page === 'sign-up') {
+              const module = await import('./src/js/account/signup.js');
+              if (module.initSignUpEvents) module.initSignUpEvents();
+            }
+          } catch (err) {
+            console.error(`Lỗi nạp file JS cho trang ${page}:`, err);
           }
         });
       }
 
-      renderPage();
+      window.addEventListener('DOMContentLoaded', renderPage);
       window.addEventListener('popstate', renderPage);
     </script>
-
-    <!-- Nạp JS script -->
-    <script type="module" src="./src/js/account/signin.js"></script>
-    <script type="module" src="./src/js/account/forgetpassword.js"></script>
-    <script type="module" src="./src/js/account/confirmation.js"></script>
-    <script type="module" src="./src/js/account/newpassword.js"></script>
-    <script type="module" src="./src/js/account/signup.js"></script>
   </body>
 </html>
