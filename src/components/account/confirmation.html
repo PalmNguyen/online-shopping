@@ -30,38 +30,42 @@
                     Enter The Confirmation Code
                 </h2>
             
-                <!-- Form Xác nhận mã -->
-                <form action="#" method="POST" class="w-full flex flex-col items-start">
+                <form id="confirmation-form" class="w-full flex flex-col items-start">
                     
-                    <!-- Input Confirmation Code -->
-                    <div class="w-full mb-10 xl:mb-[29px] text-left">
+                    <!-- INPUT & THẺ THÔNG BÁO -->
+                    <div class="w-full mb-6 xl:mb-[20px] text-left">
                         <input 
+                            id="confirmation-code"
                             type="text" 
                             placeholder="Confirmation Code" 
                             required 
+                            maxlength="6"
                             class="w-full h-10 xl:h-[47px] bg-transparent border-b border-[#9D9D9D] text-sm xl:text-[16px] text-black placeholder-[#9D9D9D] focus:outline-none focus:border-black transition-colors"
                         />
+                        <!-- VỊ TRÍ MỚI THÊM: Nơi JS chèn nội dung thông báo -->
+                        <p id="otp-message" class="mt-2 text-sm font-poppins text-red-500 hidden"></p>
                     </div>
 
                     <!-- Nút Recover Account -->
-                        <a 
-                            href="?page=new-password"
-                            class="w-full h-12 xl:h-[60px] mx-auto xl:w-[575px] flex items-center justify-center bg-black text-white rounded-[10px] font-poppins font-semibold text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] hover:bg-neutral-800 transition-all shadow-[0_20px_35px_rgba(0,0,0,0.15)] mb-6 xl:mb-[23px] cursor-pointer"
-                        >
-                            Recover Account
-                        </a>
+                    <button 
+                        type="submit"
+                        class="w-full h-12 xl:h-[60px] mx-auto xl:w-[575px] flex items-center justify-center bg-black text-white rounded-[10px] font-poppins font-semibold text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] hover:bg-neutral-800 transition-all shadow-[0_20px_35px_rgba(0,0,0,0.15)] mb-6 xl:mb-[23px] cursor-pointer"
+                    >
+                        Recover Account
+                    </button>
 
                     <!-- Dòng chuyển hướng Resend Now -->
                     <div class="w-full text-center xl:w-[434px] mx-auto">
                         <span class="font-poppins font-normal text-xs sm:text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-black">
                             Didn't receive Confirmation Code?
                         </span>
-                        <a 
-                            href="#" 
-                            class="font-poppins font-bold text-xs sm:text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-[#5B86E5] hover:underline"
+                        <button 
+                            type="button"
+                            id="resend-btn"
+                            class="font-poppins font-bold text-xs sm:text-sm xl:text-[16px] xl:leading-[40px] tracking-[0.08em] text-[#5B86E5] hover:underline bg-transparent border-none cursor-pointer"
                         >
                             Resend Now
-                        </a>
+                        </button>
                     </div>
                 </form>
             </div>

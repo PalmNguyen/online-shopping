@@ -4,86 +4,86 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Online Shopping</title>
-     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="./src/style.css" />
   </head>
 
   <body>
-    <!-- 1. CÁC KHUNG CHỨA -->
     <div id="header-container"></div>
     <div id="main-container"></div>
 
-    <!-- Nạp file JS bên ngoài -->
-    <script src="./src/js/signin.js"></script>
-
-    <script type="module">
-      // 1. Cập nhật hàm fetch có nhận thêm callback
+    <script>
       function loadComponent(id, filePath, callback) {
-        fetch(filePath)
+        // Tự động xử lý đường dẫn tuyệt đối cho GitHub Pages
+        const cleanPath = filePath.replace('./', '');
+        
+        fetch(cleanPath)
           .then(res => {
-            if (!res.ok) throw new Error("Không tìm thấy file: " + filePath);
+            if (!res.ok) throw new Error("Không tìm thấy file: " + cleanPath);
             return res.text();
           })
           .then(data => {
             const targetEl = document.getElementById(id);
             if (targetEl) {
               targetEl.innerHTML = data;
-              // Chạy hàm JS tương ứng sau khi HTML đã render vào giao diện
               if (callback) callback();
             }
           })
-          .catch(err => console.error(err));
+          .catch(err => console.error("Lỗi load component:", err));
       }
       
-      // 2. DANH SÁCH ĐƯỜNG DẪN TRANG (ROUTES)
       const routes = {
-        'home': './src/components/homepage.html',
-        'shop': './src/components/shoppage.html',
-        'product': './src/components/productpage.html',
-        'cart': './src/components/cartpage.html',
-        'checkout': './src/components/checkout.html',
+        'home': 'src/components/homepage.html',
+        'shop': 'src/components/shoppage.html',
+        'product': 'src/components/productpage.html',
+        'minicart': 'src/components/minicart.html',
+        'cart': 'src/components/cartpage.html',
+        'checkout': 'src/components/checkout.html',
 
-        // Nhóm Account
-        'sign-in': './src/components/account/sign-in.html',
-        'forget-password': './src/components/account/forget-password.html',
-        'confirmation': './src/components/account/confirmation.html',
-        'new-password': './src/components/account/new-password.html',
-        'sign-up': './src/components/account/sign-up.html',
+        'sign-in': 'src/components/account/sign-in.html',
+        'forget-password': 'src/components/account/forget-password.html',
+        'confirmation': 'src/components/account/confirmation.html',
+        'new-password': 'src/components/account/new-password.html',
+        'sign-up': 'src/components/account/sign-up.html',
       };
 
-      // 3. HÀM XỬ LÝ LOGIC CHUYỂN TRANG
-      function renderPage() {
+      window.renderPage = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const page = urlParams.get('page') || 'home';
         
         const filePath = routes[page] || routes['home'];
 
-        //--- XỬ LÝ LOGIC CHỌN HEADER TÙY THEO TRANG ---
         if (page === 'home') {
-            loadComponent('header-container', './src/components/header/home.html');
-            
-        } else if (page === 'sign-in' || page === 'sign-up' || page === 'forget-password' || page === 'confirmation'|| page === 'new-password') {
+            loadComponent('header-container', 'src/components/header/home.html');
+        } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
             const headerEl = document.getElementById('header-container');
-            if (headerEl) {
-              headerEl.innerHTML = '';
-            }
-
+            if (headerEl) headerEl.innerHTML = '';
         } else {
-            loadComponent('header-container', './src/components/header/sub.html'); 
+            loadComponent('header-container', 'src/components/header/sub.html'); 
         }
 
-        // Tải trang main và kích hoạt JS tương ứng với trang đó
         loadComponent('main-container', filePath, () => {
           if (page === 'sign-in' && typeof initSignInEvents === 'function') {
             initSignInEvents();
+          } else if (page === 'forget-password' && typeof initForgetPasswordEvents === 'function') {
+            initForgetPasswordEvents();
+          } else if (page === 'confirmation' && typeof window.initConfirmationEvents === 'function') {
+            window.initConfirmationEvents();
+          } else if (page === 'new-password' && typeof window.initNewPasswordEvents === 'function') {
+            window.initNewPasswordEvents();
           }
         });
       }
 
-      // 4. CHẠY HÀM KHI NGƯỜI DÙNG TRUY CẬP
       renderPage();
-
       window.addEventListener('popstate', renderPage);
     </script>
+
+    <!-- Nạp JS script -->
+    <script src="./src/js/account/signin.js"></script>
+    <script src="./src/js/account/forgetpassword.js"></script>
+    <script src="./src/js/account/confirmation.js"></script>
+    <script src="./src/js/account/newpassword.js"></script>
+    <script src="./src/js/account/signup.js"></script>
   </body>
 </html>
