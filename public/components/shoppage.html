@@ -46,7 +46,7 @@
           </h2>
         </div>
 
-        <!-- BƯỚC 1: Lọc theo Size -->
+        <!-- BƯỚC 1: Lọc theo Size (Đã gắn chip) -->
         <div id="filter-size" class="w-[150px] flex flex-col gap-4">
           <p
             class="font-volkhov font-normal text-[18px] leading-[28px] text-black"
@@ -55,27 +55,36 @@
           </p>
           <ul class="flex flex-row gap-3 flex-wrap">
             <li
-              class="w-[42px] h-[42px] flex items-center justify-center border border-black rounded-[5px] font-jost text-base font-normal text-black uppercase cursor-pointer"
+              class="filter-item w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              data-type="size"
+              data-value="S"
             >
               S
             </li>
             <li
-              class="w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              class="filter-item w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              data-type="size"
+              data-value="M"
             >
               M
             </li>
             <li
-              class="w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              class="filter-item w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              data-type="size"
+              data-value="L"
             >
               L
             </li>
             <li
-              class="w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              class="filter-item w-[42px] h-[42px] flex items-center justify-center border border-medium-gray rounded-[5px] font-jost text-base font-normal text-medium-gray hover:border-black hover:text-black transition-colors cursor-pointer"
+              data-type="size"
+              data-value="XL"
             >
               XL
             </li>
           </ul>
         </div>
+
         <!-- BƯỚC 2: Lọc theo Colors -->
         <div id="filter-colors" class="flex flex-col gap-4">
           <p
@@ -83,218 +92,266 @@
           >
             Colors
           </p>
-
-          <!-- Thêm -mx-[5px] để triệt tiêu 5px padding mép trái/phải -->
           <div class="flex flex-wrap items-center -mx-[5px]">
-            <!-- HÀNG 1 -->
+            <!-- Bạn nhớ thêm filter-item và data-type="color" vào TẤT CẢ các nút màu nhé -->
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ff6c6c"
+                data-type="color"
+                data-value="#ff6c6c"
                 aria-label="Color Pink"
               ></button>
             </div>
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ff8a00"
+                data-type="color"
+                data-value="#ff8a00"
                 aria-label="Color Orange"
               ></button>
             </div>
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ffe600"
+                data-type="color"
+                data-value="#ffe600"
                 aria-label="Color Yellow"
               ></button>
             </div>
+            <!-- Làm tương tự cho các màu còn lại của bạn... -->
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #82ff6c"
+                data-type="color"
+                data-value="#82ff6c"
                 aria-label="Color Green"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #6cffba"
+                data-type="color"
+                data-value="#6cffba"
                 aria-label="Color Mint"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #6cfaff"
+                data-type="color"
+                data-value="#6cfaff"
                 aria-label="Color Cyan"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #6cb0ff"
+                data-type="color"
+                data-value="#6cb0ff"
                 aria-label="Color Light Blue"
               ></button>
             </div>
 
-            <!-- HÀNG 2 -->
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #6c72ff"
+                data-type="color"
+                data-value="#6c72ff"
                 aria-label="Color Blue"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #806cff"
+                data-type="color"
+                data-value="#806cff"
                 aria-label="Color Indigo"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #b56cff"
+                data-type="color"
+                data-value="#b56cff"
                 aria-label="Color Purple"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ff6cfa"
+                data-type="color"
+                data-value="#ff6cfa"
                 aria-label="Color Magenta"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ff6c85"
+                data-type="color"
+                data-value="#ff6c85"
                 aria-label="Color Rose"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #000000"
+                data-type="color"
+                data-value="#000000"
                 aria-label="Color Black"
               ></button>
             </div>
+
             <div class="p-[5px]">
               <button
                 type="button"
-                class="w-[30px] h-[30px] rounded-[15px] ring-2 ring-offset-2 ring-black cursor-pointer block transition-transform hover:scale-110"
+                class="filter-item w-[30px] h-[30px] rounded-[15px] shadow-[0_0_0_1px_rgba(0,0,0,0.1)] cursor-pointer block transition-transform hover:scale-110"
                 style="background-color: #ff6c6c"
+                data-type="color"
+                data-value="#b56cff"
                 aria-label="Color Selected"
               ></button>
             </div>
           </div>
         </div>
 
-        <!-- BƯỚC 3: Lọc theo Prices -->
+        <!-- BƯỚC 3: Lọc theo Prices (Đã gắn chip) -->
         <div id="filter-prices" class="flex flex-col gap-4">
           <p
             class="font-volkhov font-normal text-[18px] leading-[28px] text-black"
           >
             Prices
           </p>
-
           <ul class="flex flex-col gap-[10px]">
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="price"
+              data-value="0-50"
             >
               $0-$50
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="price"
+              data-value="50-100"
             >
               $50-$100
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="price"
+              data-value="100-150"
             >
               $100-$150
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="price"
+              data-value="150-200"
             >
               $150-$200
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="price"
+              data-value="300-400"
             >
               $300-$400
             </li>
           </ul>
         </div>
 
-        <!-- BƯỚC 4: Lọc theo Brands -->
-        <div id="filter-brands" class="flex flex-col gap-3">
-          <!-- Tiêu đề Brands & Nút bấm căn chỉnh linh hoạt 2 bên -->
+        <!-- BƯỚC 4: Lọc theo Brands (Đã gắn chip) -->
+        <div id="filter-brands" class="flex flex-col gap-3 mt-4">
           <div class="flex flex-row items-center justify-between w-full">
             <p
               class="font-volkhov font-normal text-[18px] leading-[28px] text-black"
             >
               Brands
             </p>
-            <button type="button" class="cursor-pointer">
-              <img src="./assets/img/arrow-up.svg" alt="arrow up" />
-            </button>
           </div>
-
-          <!-- Danh sách Brands dùng -mx-[5px] để triệt tiêu padding mép trái -->
           <ul
             class="flex flex-row flex-wrap items-center -mx-[5px] max-w-[220px]"
           >
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="Fasco"
             >
-              Minimog
+              Fasco
             </li>
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="Zara"
             >
-              Retrolie
+              Zara
             </li>
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="H&M"
             >
-              Brook
+              H&M
             </li>
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="Levi's"
             >
-              Learts
+              Levi's
             </li>
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="Ray-Ban"
             >
-              Vagabond
+              Ray-Ban
             </li>
             <li
-              class="px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item px-[5px] pb-[1px] font-poppins font-normal text-base leading-[30px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="brand"
+              data-value="Nike"
             >
-              Abby
+              Nike
             </li>
           </ul>
         </div>
-
-        <!-- BƯỚC 5: Lọc theo Collections -->
+        <!-- BƯỚC 5: Lọc theo Collections (Đã gắn chip) -->
         <div id="filter-collections" class="flex flex-col gap-4">
-          <!-- Tiêu đề Collections & Mũi tên hướng lên -->
           <div class="flex flex-row items-center justify-between w-full">
             <p
               class="font-volkhov font-normal text-[18px] leading-[28px] text-black"
@@ -312,29 +369,37 @@
 
           <ul class="flex flex-col gap-[10px]">
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="collection"
+              data-value="All products"
             >
               All products
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="collection"
+              data-value="Best sellers"
             >
               Best sellers
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="collection"
+              data-value="New arrivals"
             >
               New arrivals
             </li>
             <li
-              class="font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-poppins font-normal text-base leading-[24px] text-medium-gray hover:text-black cursor-pointer transition-colors"
+              data-type="collection"
+              data-value="Accessories"
             >
               Accessories
             </li>
           </ul>
         </div>
 
-        <!-- BƯỚC 6: Lọc theo Tags -->
+        <!-- BƯỚC 6: Lọc theo Tags (Đã gắn chip) -->
         <div id="filter-tags" class="flex flex-col gap-3">
           <p
             class="font-volkhov font-normal text-[18px] leading-[28px] text-black"
@@ -342,62 +407,83 @@
             Tags
           </p>
 
-          <!-- Quản lý khoảng cách bằng gap-x và gap-y giúp layout tự nhảy hàng chuẩn -->
           <ul
             class="flex flex-row flex-wrap items-center gap-x-4 gap-y-1 w-full"
           >
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Fashion"
             >
               Fashion
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Hats"
             >
               Hats
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Sandal"
             >
               Sandal
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Belt"
             >
               Belt
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Bags"
             >
               Bags
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Snacker"
             >
               Snacker
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Denim"
             >
               Denim
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Minimog"
             >
               Minimog
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Vagabond"
             >
               Vagabond
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Sunglasses"
             >
               Sunglasses
             </li>
             <li
-              class="font-jost font-normal text-base leading-[30px] text-black underline cursor-pointer"
+              class="filter-item font-jost font-normal text-base leading-[30px] text-neutral-gray hover:text-black cursor-pointer transition-colors"
+              data-type="tag"
+              data-value="Beachwear"
             >
               Beachwear
             </li>
@@ -407,13 +493,14 @@
 
       <!-- 2. KHU VỰC SẢN PHẨM (Bên phải) -->
       <div class="flex-1 w-full flex flex-col">
-        <!-- Toolbar + Product Grid + Pagination giữ nguyên -->
+        <!-- Toolbar + Product Grid + Pagination -->
         <div
           class="flex flex-row items-center justify-between w-full mb-[30px]"
         >
-          <!-- BÊN TRÁI: Select Sắp xếp (Best selling) -->
+          <!-- BÊN TRÁI: Select Sắp xếp (Thêm id="sort-select") -->
           <div class="relative inline-flex items-center">
             <select
+              id="sort-select"
               class="w-[105px] font-volkhov font-normal text-base leading-[24px] text-black bg-transparent border-none outline-none cursor-pointer appearance-none pr-[12px]"
             >
               <option value="best-selling">Best selling</option>
@@ -421,8 +508,6 @@
               <option value="price-high-low">Price: High to Low</option>
               <option value="newest">Newest</option>
             </select>
-
-            <!-- Mũi tên tùy chỉnh -->
             <img
               src="./assets/img/vector.svg"
               alt="arrow"
@@ -430,13 +515,13 @@
             />
           </div>
 
-          <!-- BÊN PHẢI: View Style (5 nút chuyển layout) -->
+          <!-- BÊN PHẢI: View Style (Thêm class "view-btn" và data-cols) -->
           <ul class="flex flex-row items-center gap-[10px]">
-            <!-- Nút 1: 1 cột -->
             <li>
               <button
                 type="button"
-                class="w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
+                data-cols="1"
+                class="view-btn w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
               >
                 <img
                   src="./assets/img/layer-2.svg"
@@ -445,12 +530,11 @@
                 />
               </button>
             </li>
-
-            <!-- Nút 2: 2 cột -->
             <li>
               <button
                 type="button"
-                class="w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
+                data-cols="2"
+                class="view-btn w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
               >
                 <img
                   src="./assets/img/layer-1.svg"
@@ -459,25 +543,20 @@
                 />
               </button>
             </li>
-
-            <!-- Nút 3: 3 cột (Đang Active) -->
             <li>
               <button
                 type="button"
-                class="w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
+                data-cols="3"
+                class="view-btn w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
               >
-                <img
-                  src="./assets/img/layer-1-1.svg"
-                  alt="View 3 columns"
-                />
+                <img src="./assets/img/layer-1-1.svg" alt="View 3 columns" />
               </button>
             </li>
-
-            <!-- Nút 4: 4 cột -->
             <li>
               <button
                 type="button"
-                class="w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
+                data-cols="4"
+                class="view-btn w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
               >
                 <img
                   src="./assets/img/layer-1-2.svg"
@@ -486,12 +565,11 @@
                 />
               </button>
             </li>
-
-            <!-- Nút 5: 5 cột -->
             <li>
               <button
                 type="button"
-                class="w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
+                data-cols="5"
+                class="view-btn w-[34px] h-[34px] flex items-center justify-center rounded-[3px] bg-[#F2F2F2] hover:bg-black transition-colors cursor-pointer group"
               >
                 <img
                   src="./assets/img/layer-1-3.svg"
@@ -503,420 +581,21 @@
           </ul>
         </div>
 
-        <!-- THẺ CHỨA TOÀN BỘ CÁC CARD -->
+        <!-- THẺ CHỨA TOÀN BỘ CÁC CARD (Thêm id="product-list" và xóa hết sản phẩm mẫu) -->
         <ul
+          id="product-list"
           class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-[30px] w-full -mx-[12px]"
         >
-          <!-- THẺ CARD 1 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/roundedredhat.png"
-              alt="Rounded Red Hat"
-              class="w-full h-auto object-cover rounded-[4px]"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Rounded Red Hat
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $8.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#FFD700] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-black cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 2 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <div class="relative w-full">
-              <img
-                src="./assets/img/lineblendshirt.png"
-                alt="Linen-blend Shirt"
-                class="w-full h-auto object-cover"
-              />
-
-              <!-- Badge Sold Out xếp 2 dòng chuẩn Figma -->
-              <span
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[54px] h-[54px] rounded-full bg-[#A1A1A1] flex flex-col items-center justify-center font-jost font-black text-[10px] leading-[12px] text-white text-center uppercase pointer-events-none"
-              >
-                <span>SOLD</span>
-                <span>OUT</span>
-              </span>
-            </div>
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Linen-blend Shirt
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $17.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#8DB4D2] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Light Blue color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#FFD1DC] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Pink color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 3 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/longsleevecoat.png"
-              alt="Long-sleeve Coat"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Long-sleeve Coat
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $106.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#EBE6DB] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#C1E1C1] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 4 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/boxydenimhat.png"
-              alt="Boxy Denim Hat"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Boxy Denim Hat
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $25.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#B1C5D4] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#063E66] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 5 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/lineplaintop.png"
-              alt="Linen Plain Top"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Linen Plain Top
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $25.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#C1E1C1] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[url('./assets/img/pattern-caro.png')] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 6 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/oversizedtshirt.png"
-              alt="Oversized T-shirt"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Oversized T-shirt
-                </h3>
-                <div class="flex items-center gap-[8px]">
-                  <!-- Giá khuyến mãi -->
-                  <span
-                    class="font-jost font-bold text-base leading-[19px] text-black"
-                  >
-                    $11.00
-                  </span>
-
-                  <!-- Giá gốc (Bị gạch ngang) -->
-                  <del
-                    class="font-jost font-normal text-base leading-[19px] text-[#666666] line-through no-underline-offset"
-                  >
-                    $14.00
-                  </del>
-                </div>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#FFD1DC] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#C6AEC7] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#FFFFFF01] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 7 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/polarisedsunglasses.png"
-              alt="Polarised Sunglasses"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Polarised Sunglasses
-                </h3>
-                <div class="flex items-center gap-[8px]">
-                  <!-- Giá khuyến mãi -->
-                  <span
-                    class="font-jost font-bold text-base leading-[19px] text-black"
-                  >
-                    $18.00
-                  </span>
-
-                  <!-- Giá gốc (Bị gạch ngang) -->
-                  <del
-                    class="font-jost font-normal text-base leading-[19px] text-[#666666] line-through no-underline-offset"
-                  >
-                    $21.00
-                  </del>
-                </div>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-black cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#836953] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 8 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/rockstarjacket.png"
-              alt="Rockstar Jacket"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Rockstar Jacket
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $22.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#C6AEC7] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#BEDCE3] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
-
-          <!-- THẺ CARD 9 -->
-          <li class="px-[12px] flex flex-col items-start gap-5 w-full">
-            <img
-              src="./assets/img/dottedblackdress.png"
-              alt="Dotted Black Dress"
-              class="w-full h-auto object-cover"
-            />
-
-            <div class="flex flex-col gap-[13px] w-full">
-              <div class="flex flex-col gap-1">
-                <h3
-                  class="font-volkhov font-normal text-base leading-[24px] text-black"
-                >
-                  Dotted Black Dress
-                </h3>
-                <p
-                  class="font-jost font-normal text-base leading-[24px] text-black"
-                >
-                  $20.00
-                </p>
-              </div>
-
-              <div class="flex flex-row items-center gap-[10px]">
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#063E66] cursor-pointer shadow-[inset_0_0_0_4px_#ffffff,0_0_0_1px_#000000]"
-                  aria-label="Yellow color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-black cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-                <button
-                  type="button"
-                  class="w-[26px] h-[26px] rounded-full bg-[#B1C5D4] cursor-pointer hover:scale-110 transition-transform"
-                  aria-label="Black color"
-                ></button>
-              </div>
-            </div>
-          </li>
+          <!-- JAVASCRIPT SẼ RENDER SẢN PHẨM VÀO ĐÂY -->
         </ul>
-        <!-- PAGINATION (Cách danh sách sản phẩm 70px, gap 8px) -->
+
+        <!-- PAGINATION (Thêm id="pagination" và để trống) -->
         <nav
+          id="pagination"
           aria-label="Pagination"
           class="flex items-center justify-center gap-[8px] mt-[70px]"
         >
-          <!-- Nút 1: Active (44x44px, background #F3F3F3) -->
-          <a
-            href="#"
-            class="w-[44px] h-[44px] flex items-center justify-center rounded-full bg-[#F3F3F3] font-jost text-base font-normal leading-[24px] text-black"
-          >
-            1
-          </a>
-
-          <!-- Nút 2: (40x40px) -->
-          <a
-            href="#"
-            class="w-[40px] h-[40px] flex items-center justify-center rounded-full font-jost text-base font-normal leading-[24px] text-black hover:text-black transition-colors"
-          >
-            2
-          </a>
-
-          <!-- Nút 3: (40x40px) -->
-          <a
-            href="#"
-            class="w-[40px] h-[40px] flex items-center justify-center rounded-full font-jost text-base font-normal leading-[24px] text-black hover:text-black transition-colors"
-          >
-            3
-          </a>
-
-          <!-- Nút Next: (40x40px) -->
-          <a
-            href="#"
-            class="w-[40px] h-[40px] flex items-center justify-center rounded-full font-jost text-base font-normal leading-[24px] text-black hover:text-black transition-colors"
-            aria-label="Next page"
-          >
-            <img src="./assets/img/muiten.svg" alt="MŨI TÊN QUA TRANG" />
-          </a>
+          <!-- JAVASCRIPT SẼ RENDER PHÂN TRANG VÀO ĐÂY -->
         </nav>
       </div>
     </div>
@@ -942,7 +621,7 @@
     >
       <div class="max-w-[350px] sm:max-w-[500px] lg:max-w-[722px]">
         <img
-          src="src/assets/img/peakyblinders.png"
+          src="./assets/img/peakyblinders.png"
           class="w-full h-auto object-contain block"
           alt="Peaky Blinders Women Collection Model"
         />
@@ -1006,7 +685,7 @@
   >
     <li class="flex items-center gap-4">
       <img
-        src="src/assets/img/taycongoisao.svg"
+        src="./assets/img/taycongoisao.svg"
         alt="High Quality Materials Icon"
         class="w-12 h-12 flex-shrink-0 object-contain"
       />
@@ -1024,7 +703,7 @@
 
     <li class="flex items-center gap-4">
       <img
-        src="src/assets/img/huanchuong.svg"
+        src="./assets/img/huanchuong.svg"
         alt="Warranty Protection Badge"
         class="w-12 h-12 flex-shrink-0 object-contain"
       />
@@ -1042,7 +721,7 @@
 
     <li class="flex items-center gap-4">
       <img
-        src="src/assets/img/thungxop.svg"
+        src="./assets/img/thungxop.svg"
         alt="Free Shipping Box Icon"
         class="w-12 h-12 flex-shrink-0 object-contain"
       />
@@ -1060,7 +739,7 @@
 
     <li class="flex items-center gap-4">
       <img
-        src="src/assets/img/dienthoaibanhrang.svg"
+        src="./assets/img/dienthoaibanhrang.svg"
         alt="24/7 Support Service Icon"
         class="w-12 h-12 flex-shrink-0 object-contain"
       />
@@ -1240,7 +919,9 @@
       </a>
 
       <nav aria-label="Footer Navigation">
-        <ul class="flex flex-wrap items-center justify-center gap-8 md:gap-[70px]">
+        <ul
+          class="flex flex-wrap items-center justify-center gap-8 md:gap-[70px]"
+        >
           <li>
             <a
               href="#"

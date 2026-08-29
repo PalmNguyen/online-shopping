@@ -53,18 +53,31 @@
       const filePath = routes[page] || routes['home'];
 
       // 1. Load Header
-      if (page === 'home') {
-        loadComponent('header-container', 'components/header/home.html');
-      } else if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
+       if (['sign-in', 'sign-up', 'forget-password', 'confirmation', 'new-password'].includes(page)) {
         const headerEl = document.getElementById('header-container');
         if (headerEl) headerEl.innerHTML = '';
       } else {
-        loadComponent('header-container', 'components/header/sub.html');
+        // Tự động xác định file header html
+        const headerFile = (page === 'home') ? 'components/header/home.html' : 'components/header/sub.html';
+
+        // Load file header html tương ứng, sau đó gọi file JS chung (navbar.js hoặc sub.js)
+        loadComponent('header-container', headerFile, () => {
+          import('./src/js/header/hamburger.js').then(module => {
+            if (module.initHeaderEvents) module.initHeaderEvents();
+          });
+        });
       }
 
       // 2. Load Main & Nạp JS theo từng trang
       loadComponent('main-container', filePath, async () => {
         try {
+          // Nạp MiniCart
+          //const minicartModule = await import('./src/js/minicart.js').catch(() => null);
+          //if (minicartModule && minicartModule.initMiniCartEvents) {
+            //minicartModule.initMiniCartEvents();
+          //} 
+
+          // Nạp JS theo trang hiện tại
           if (page === 'sign-in') {
             const module = await import('./src/js/account/signin.js');
             if (module.initSignInEvents) module.initSignInEvents();
@@ -86,6 +99,9 @@
           } else if (page === 'checkout') {
             const module = await import('./src/js/checkout.js');
             if (module.initCheckoutEvents) module.initCheckoutEvents();
+          } else if (page === 'shop') {
+            const module = await import('./src/js/shop.js');
+            if (module.initShopEvents) module.initShopEvents();
           }
         } catch (err) {
           console.error(`Lỗi nạp file JS cho trang ${page}:`, err);
