@@ -3,7 +3,6 @@
   <!-- Thẻ H1 ẩn/hiện chuẩn SEO cho trang chủ -->
   <h1 class="sr-only">FASCO - Online Fashion & Shopping Store</h1>
 
-
   <!-- 1. ĐỔI items-center THÀNH items-stretch -->
   <div
     class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch justify-items-center"
@@ -136,12 +135,18 @@
           duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
           sollicitudin
         </p>
-        <a
-          href="?page=cart"
-          class="bg-black hover:bg-neutral-800 font-poppins w-[207px] h-[56px] flex items-center justify-center text-white rounded-xl transition-all duration-200 shadow-md active:scale-95 mt-2"
+        <button
+          type="button"
+          class="add-to-cart-btn bg-black hover:bg-neutral-800 font-poppins w-[207px] h-[56px] flex items-center justify-center text-white rounded-xl transition-all duration-200 shadow-md active:scale-95 mt-2"
+          data-id="prod_02"
+          data-name="Black Dress"
+          data-price="60.00"
+          data-color="Black"
+          data-size="L"
+          data-image="./assets/img/cogaiaodentrongphandeal.png"
         >
           Buy Now
-        </a>
+        </button>
       </div>
 
       <!-- TIMER ĐẾM NGƯỢC -->
@@ -610,12 +615,18 @@
             >00</span
           >
         </p>
-        <a
-          href="?page=checkout"
-          class="inline-block w-fit font-poppins font-normal text-base uppercase rounded-[10px] bg-black text-white px-8 lg:px-16 py-4 lg:py-5 shadow-[0_20px_35px_rgba(0,0,0,0.15)] hover:bg-neutral-800 transition-all duration-200 active:scale-95 text-center"
+        <button
+          type="button"
+          class="add-to-cart-btn inline-block w-fit font-poppins font-normal text-base uppercase rounded-[10px] bg-black text-white px-8 lg:px-16 py-4 lg:py-5 shadow-[0_20px_35px_rgba(0,0,0,0.15)] hover:bg-neutral-800 transition-all duration-200 active:scale-95 text-center"
+          data-id="prod_03"
+          data-name="Peaky Blinders"
+          data-price="100.00"
+          data-color="Black"
+          data-size="M"
+          data-image="./assets/img/peakyblinders.png"
         >
           Buy Now
-        </a>
+        </button>
       </div>
     </div>
   </div>

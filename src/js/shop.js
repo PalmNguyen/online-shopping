@@ -195,7 +195,14 @@ function renderProducts(productList) {
 
         // --- GỘP TẤT CẢ VÀO THẺ <li> CHUẨN HTML CỦA BẠN ---
         html += `
-            <li class="px-[12px] flex flex-col items-start gap-5 w-full">
+<li class="add-to-cart-btn px-[12px] flex flex-col items-start gap-5 w-full cursor-pointer hover:opacity-80 transition-opacity"
+                data-id="shop_prod_${product.id}"
+                data-name="${product.name}"
+                data-price="${product.price}"
+                data-color="${product.colors[0] || 'Default'}"
+                data-size="M"
+                data-image="${product.image}"
+            >
                 <div class="relative w-full">
                     <img src="${product.image}" alt="${product.name}" class="w-full h-auto object-cover rounded-[4px]" />
                     ${soldOutHtml}

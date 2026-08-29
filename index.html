@@ -10,7 +10,7 @@
   <body>
     <div id="header-container"></div>
     <div id="main-container"></div>
-
+    <div id="minicart-container"></div>
     <script type="module">
       function loadComponent(id, filePath, callback) {
         const cleanPath = filePath.replace('./', '');
@@ -44,6 +44,14 @@
         'new-password': 'components/account/new-password.html',
         'sign-up': 'components/account/sign-up.html',
       };
+
+      // minicart
+      loadComponent('minicart-container', 'components/minicart.html', async () => {
+    const minicartModule = await import('./src/js/minicart.js');
+    if (minicartModule.initMiniCartEvents) {
+        minicartModule.initMiniCartEvents();
+    }
+});
 
       window.renderPage = function() {
         const urlParams = new URLSearchParams(window.location.search);
