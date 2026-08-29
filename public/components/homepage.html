@@ -1,9 +1,10 @@
 <!-- CỤM HERO IMAGES -->
-<div id="home" class="max-w-7xl mx-auto mb-7 px-4">
+<div class="max-w-7xl mx-auto mb-7 px-4">
+  <!-- Thẻ H1 ẩn/hiện chuẩn SEO cho trang chủ -->
   <h1 class="sr-only">FASCO - Online Fashion & Shopping Store</h1>
-  <!-- Nội dung bên trong giữ nguyên -->
-</div>
-<div
+
+  <!-- 1. ĐỔI items-center THÀNH items-stretch -->
+  <div
     class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch justify-items-center"
   >
     <!-- CỘT 1 (BÊN TRÁI) -->
@@ -113,7 +114,9 @@
 </section>
 
 <!-- SECTION DEALS OF THE MONTH -->
-<section id="details" class="w-full bg-gradient-to-b from-white to-off-white pt-[55px] pb-[145px] overflow-hidden mb-[150px]">
+<section
+  class="w-full bg-gradient-to-b from-white to-off-white pt-[55px] pb-[145px] overflow-hidden mb-[150px]"
+>
   <div
     class="max-w-[1920px] mx-auto pl-4 sm:pl-10 xl:pl-[240px] pr-4 sm:pr-10 xl:pr-[162px] flex flex-col lg:flex-row items-start justify-between gap-10 lg:gap-16"
   >
@@ -132,12 +135,18 @@
           duis ultrices sollicitudin aliquam sem. Scelerisque duis ultrices
           sollicitudin
         </p>
-        <a
-          href="?page=cart"
-          class="bg-black hover:bg-neutral-800 font-poppins w-[207px] h-[56px] flex items-center justify-center text-white rounded-xl transition-all duration-200 shadow-md active:scale-95 mt-2"
+        <button
+          type="button"
+          class="add-to-cart-btn bg-black hover:bg-neutral-800 font-poppins w-[207px] h-[56px] flex items-center justify-center text-white rounded-xl transition-all duration-200 shadow-md active:scale-95 mt-2"
+          data-id="prod_02"
+          data-name="Black Dress"
+          data-price="60.00"
+          data-color="Black"
+          data-size="L"
+          data-image="./assets/img/cogaiaodentrongphandeal.png"
         >
           Buy Now
-        </a>
+        </button>
       </div>
 
       <!-- TIMER ĐẾM NGƯỢC -->
@@ -291,7 +300,9 @@
 </section>
 
 <!-- NEW ARRIVALS SECTION -->
-<section id="new-arrivals" class="max-w-7xl mx-auto flex flex-col items-center gap-6 sm:gap-10 mb-20 sm:mb-[152px] px-4">
+<section
+  class="max-w-7xl mx-auto flex flex-col items-center gap-6 sm:gap-10 mb-20 sm:mb-[152px] px-4"
+>
   <div class="max-w-[614px] flex flex-col text-center gap-4 sm:gap-5">
     <h2
       class="font-volkhov font-normal text-3xl sm:text-4xl lg:text-5xl text-dark-brown"
@@ -543,7 +554,6 @@
 
 <!-- PEAKY BLINDERS SECTION -->
 <section
-  id="packages"
   class="relative w-full max-w-[1920px] mx-auto h-auto lg:h-[570px] overflow-hidden bg-pale-smoke py-10 lg:py-0"
 >
   <svg
@@ -605,12 +615,18 @@
             >00</span
           >
         </p>
-        <a
-          href="?page=checkout"
-          class="inline-block w-fit font-poppins font-normal text-base uppercase rounded-[10px] bg-black text-white px-8 lg:px-16 py-4 lg:py-5 shadow-[0_20px_35px_rgba(0,0,0,0.15)] hover:bg-neutral-800 transition-all duration-200 active:scale-95 text-center"
+        <button
+          type="button"
+          class="add-to-cart-btn inline-block w-fit font-poppins font-normal text-base uppercase rounded-[10px] bg-black text-white px-8 lg:px-16 py-4 lg:py-5 shadow-[0_20px_35px_rgba(0,0,0,0.15)] hover:bg-neutral-800 transition-all duration-200 active:scale-95 text-center"
+          data-id="prod_03"
+          data-name="Peaky Blinders"
+          data-price="100.00"
+          data-color="Black"
+          data-size="M"
+          data-image="./assets/img/peakyblinders.png"
         >
           Buy Now
-        </a>
+        </button>
       </div>
     </div>
   </div>

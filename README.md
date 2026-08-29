@@ -107,12 +107,19 @@ online-shopping/
 │       └── shoppage.html
 ├── src/
 │   ├── js/
-│   │   └── account/
-│   │       ├── confirmation.js
-│   │       ├── forgetpassword.js
-│   │       ├── newpassword.js
-│   │       ├── signin.js
-│   │       └── signup.js
+│   │   ├── account/
+│   │   │   ├── confirmation.js
+│   │   │   ├── forgetpassword.js
+│   │   │   ├── newpassword.js
+│   │   │   ├── signin.js
+│   │   │   └── signup.js
+│   │   ├── header/
+│   │   │   ├── sub.js
+│   │   │   └── navbar.js
+│   │   ├── shop.js
+│   │   ├── cart.js
+│   │   ├── checkout.js
+│   │   └── minicart.js
 │   └── style.css
 ├── .gitignore
 ├── index.html

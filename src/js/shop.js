@@ -69,8 +69,8 @@ export function initShopEvents() {
 
         if (!productList || productList.length === 0) {
             productListContainer.innerHTML = `
-                <div class="col-span-full py-10 text-center text-gray-500">
-                    Không tìm thấy sản phẩm nào phù hợp với từ khóa!
+                <div class="col-span-full py-10 text-center text-gray-500 font-jost">
+                    Không tìm thấy sản phẩm nào phù hợp!
                 </div>
             `;
             renderPagination(0);
@@ -118,7 +118,14 @@ export function initShopEvents() {
             });
 
             html += `
-                <li class="px-[12px] flex flex-col items-start gap-5 w-full">
+                <li class="add-to-cart-btn px-[12px] flex flex-col items-start gap-5 w-full cursor-pointer hover:opacity-80 transition-opacity"
+                    data-id="shop_prod_${product.id}"
+                    data-name="${product.name}"
+                    data-price="${product.price}"
+                    data-color="${product.colors[0] || 'Default'}"
+                    data-size="M"
+                    data-image="${product.image}"
+                >
                     <div class="relative w-full">
                         <img src="${product.image}" alt="${product.name}" class="w-full h-auto object-cover rounded-[4px]" />
                         ${soldOutHtml}
@@ -237,9 +244,7 @@ export function initShopEvents() {
         });
     }
 
-    // XỬ LÝ SEARCH INPUT TOÀN DIỆN (BẮT TẤT CẢ Ô INPUT & FORM HEADER)
     function setupSearchInput() {
-        // Selector bao phủ tất cả ô input search có trên trang
         const searchInputs = document.querySelectorAll(
             'input[placeholder*="Search"], input[placeholder*="search"], input[type="search"], #search-input, input[name="search"]'
         );
@@ -249,17 +254,14 @@ export function initShopEvents() {
         const currentSearch = urlParams.get('search') || '';
 
         searchInputs.forEach(input => {
-            // 1. Điền từ khóa từ URL vào ô tìm kiếm nếu có
             if (currentSearch) {
                 input.value = currentSearch;
             }
 
-            // 2. Lắng nghe khi gõ/xóa trực tiếp
             input.addEventListener('input', (e) => {
                 updateSearchState(e.target.value);
             });
 
-            // 3. Nếu ô tìm kiếm nằm trong thẻ <form>, chặn reload trang khi ấn "Go" hoặc gõ Enter
             const form = input.closest('form');
             if (form) {
                 form.addEventListener('submit', (e) => {
@@ -277,13 +279,11 @@ export function initShopEvents() {
         if (val) {
             currentUrl.searchParams.set('search', val);
         } else {
-            currentUrl.searchParams.delete('search'); // Xóa sạch tham số search trên URL khi rỗng
+            currentUrl.searchParams.delete('search');
         }
 
-        // Cập nhật lại URL thanh địa chỉ mà không reload trang
         window.history.replaceState({}, '', currentUrl);
 
-        // Đồng bộ dữ liệu hiển thị của tất cả ô input search trên màn hình
         const searchInputs = document.querySelectorAll(
             'input[placeholder*="Search"], input[placeholder*="search"], input[type="search"], #search-input, input[name="search"]'
         );
@@ -291,14 +291,12 @@ export function initShopEvents() {
             inp.value = val;
         });
 
-        // Áp dụng bộ lọc mới và render lại danh sách sản phẩm
         applyFilters();
     }
 
     function applyFilters() {
         let result = [...products];
 
-        // 1. ĐỌC TỪ KHÓA TÌM KIẾM TỪ URL QUERIES
         const urlParams = new URLSearchParams(window.location.search);
         const searchQuery = urlParams.get('search')?.toLowerCase().trim();
 
@@ -311,7 +309,6 @@ export function initShopEvents() {
             });
         }
 
-        // 2. LỌC THEO SIDEBAR
         if (state.filters.brand.length > 0) result = result.filter(product => state.filters.brand.includes(product.brand));
         if (state.filters.size.length > 0) result = result.filter(product => product.sizes.some(size => state.filters.size.includes(size)));
         if (state.filters.price.length > 0) {
@@ -393,10 +390,55 @@ export function initShopEvents() {
         });
     }
 
+    // 3.10. HÀM XỬ LÝ THÊM VÀO GIỎ HÀNG (ADD TO CART)
+    function setupAddToCart() {
+        productListContainer.addEventListener('click', (e) => {
+            // Kiểm tra click vào thẻ sản phẩm có class add-to-cart-btn
+            const card = e.target.closest('.add-to-cart-btn');
+            if (!card) return;
+
+            // Bỏ qua nếu người dùng bấm vào các nút đổi màu bên trong card
+            if (e.target.tagName === 'BUTTON') return;
+
+            const productData = {
+                id: card.dataset.id,
+                name: card.dataset.name,
+                price: parseFloat(card.dataset.price),
+                color: card.dataset.color,
+                size: card.dataset.size,
+                image: card.dataset.image,
+                quantity: 1
+            };
+
+            // Lấy danh sách giỏ hàng hiện tại từ localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Kiểm tra xem sản phẩm cùng ID, màu, size đã tồn tại chưa
+            const existingIndex = cart.findIndex(item => 
+                item.id === productData.id && 
+                item.color === productData.color && 
+                item.size === productData.size
+            );
+
+            if (existingIndex > -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push(productData);
+            }
+
+            // Lưu lại vào localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Phát Custom Event để MiniCart nhận thông báo và cập nhật lại giao diện ngay lập tức
+            window.dispatchEvent(new CustomEvent('cartUpdated'));
+        });
+    }
+
     // 4. KHỞI TẠO LOGIC
     setupSearchInput();
     setupViewStyle(); 
     setupSort();
     setupFilters();
+    setupAddToCart();
     applyFilters(); 
 }

@@ -53,7 +53,12 @@
       <button type="button" id="open-cart-btn" aria-label="Open Cart" class="relative pl-2 md:pl-[13px] pr-[5px] py-[13px] hover:opacity-75 cursor-pointer">
         <img src="./assets/img/cart.svg" alt="Cart" />
         <!-- Bạn có thể thêm số lượng sản phẩm ở đây -->
-        <span class="absolute top-2 right-0 bg-red-500 text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">2</span>
+       <span
+          id="cart-badge"
+          class="absolute top-[5px] right-[-5px] bg-[#DA3F3F] text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center hidden"
+        >
+          0
+        </span>
       </button>
 
       <!-- Nút Hamburger Menu (Mobile) -->
