@@ -64,6 +64,17 @@
         // 2. Load Main & Nạp JS theo từng trang
         loadComponent('main-container', filePath, async () => {
           try {
+            const minicartModule = await import('./src/js/minicart.js');
+            if (minicartModule.initMiniCartEvents) {
+                // Đợi 50ms cho Header và Main HTML load xong toàn bộ DOM mới tìm được ID
+                setTimeout(() => {
+                    minicartModule.initMiniCartEvents();
+                }, 50);
+            }
+
+
+
+
             if (page === 'sign-in') {
               const module = await import('./src/js/account/signin.js');
               if (module.initSignInEvents) module.initSignInEvents();
@@ -84,8 +95,24 @@
             console.error(`Lỗi nạp file JS cho trang ${page}:`, err);
           }
         });
-      }
+        if (page === 'home') {
+              // Code load trang chủ của bạn...
+          } 
+          else if (page === 'shop') 
+          { 
+            import('./src/js/shop.js')
+                .then(module => {
+                    if (module.initShopEvents) {
+                        // Bắt JS đợi 50 mili-giây để HTML chắc chắn đã render xong
+                        setTimeout(() => {
+                            module.initShopEvents();
+                        }, 50);
+                    }
+                })
+                .catch(err => console.error("Lỗi khi load shop.js:", err));
+          }
 
+      }
       window.addEventListener('DOMContentLoaded', renderPage);
       window.addEventListener('popstate', renderPage);
     </script>
